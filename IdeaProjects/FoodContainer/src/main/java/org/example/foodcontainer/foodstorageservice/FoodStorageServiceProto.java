@@ -44,22 +44,22 @@ public final class FoodStorageServiceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\030FoodStorageService.proto\022\030org.sample.F" +
-      "oodContainer\",\n\005Fruit\022\024\n\014fruit_number\030\001 " +
-      "\001(\t\022\r\n\005fruit\030\002 \001(\t\"K\n\031FoodStorageService" +
-      "Request\022.\n\005fruit\030\001 \001(\0132\037.org.sample.Food" +
-      "Container.Fruit\",\n\032FoodStorageServiceRes" +
-      "ponse\022\016\n\006result\030\001 \001(\t\"5\n#FoodStorageServ" +
-      "iceResponseManyTimes\022\016\n\006result\030\001 \001(\t2\237\002\n" +
-      "\022FoodStorageService\022y\n\014FruitStorage\0223.or" +
-      "g.sample.FoodContainer.FoodStorageServic" +
-      "eRequest\0324.org.sample.FoodContainer.Food" +
-      "StorageServiceResponse\022\215\001\n\025FruitStorageM" +
-      "anyTimes\0223.org.sample.FoodContainer.Food" +
-      "StorageServiceRequest\032=.org.sample.FoodC" +
-      "ontainer.FoodStorageServiceResponseManyT" +
-      "imes0\001BI\n,org.example.foodcontainer.food" +
-      "storageserviceB\027FoodStorageServiceProtoP" +
-      "\001b\006proto3"
+      "oodContainer\"<\n\005Fruit\022\021\n\tfruitCode\030\001 \001(\t" +
+      "\022\021\n\tfruitType\030\002 \001(\t\022\r\n\005fruit\030\003 \001(\t\"K\n\031Fo" +
+      "odStorageServiceRequest\022.\n\005fruit\030\001 \001(\0132\037" +
+      ".org.sample.FoodContainer.Fruit\",\n\032FoodS" +
+      "torageServiceResponse\022\016\n\006result\030\001 \001(\t\"5\n" +
+      "#FoodStorageServiceResponseManyTimes\022\016\n\006" +
+      "result\030\001 \001(\t2\237\002\n\022FoodStorageService\022y\n\014F" +
+      "ruitStorage\0223.org.sample.FoodContainer.F" +
+      "oodStorageServiceRequest\0324.org.sample.Fo" +
+      "odContainer.FoodStorageServiceResponse\022\215" +
+      "\001\n\025FruitStorageManyTimes\0223.org.sample.Fo" +
+      "odContainer.FoodStorageServiceRequest\032=." +
+      "org.sample.FoodContainer.FoodStorageServ" +
+      "iceResponseManyTimes0\001BI\n,org.example.fo" +
+      "odcontainer.foodstorageserviceB\027FoodStor" +
+      "ageServiceProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -78,7 +78,7 @@ public final class FoodStorageServiceProto {
     internal_static_org_sample_FoodContainer_Fruit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_sample_FoodContainer_Fruit_descriptor,
-        new java.lang.String[] { "FruitNumber", "Fruit", });
+        new java.lang.String[] { "FruitCode", "FruitType", "Fruit", });
     internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_fieldAccessorTable = new

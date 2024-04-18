@@ -16,8 +16,9 @@ service FoodStorageService {
 
 }
 message Fruit {
-  string fruit_number = 1;
-  string fruit = 2;
+  string fruitCode = 1;
+  string fruitType = 2;
+  string fruit = 3;
 }
 
 message FoodStorageServiceRequest {

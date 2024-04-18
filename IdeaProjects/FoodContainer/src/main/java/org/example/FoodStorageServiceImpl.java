@@ -7,4 +7,15 @@ import org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse;
 import org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes;
 
 public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
+
+    public void storeFruit(FoodStorageServiceRequest request, StreamObserver<FoodStorageServiceResponse> responseObserver) {
+
+        String fruitCode = request.getFruit().getFruitCode();
+        String fruitType = request.getFruit().getFruitType();
+
+        System.out.println("The fruit of type " + fruitType + " and code " + fruitCode + " is stored the container.");
+        String resultMsg = "The fruit of code " + fruitCode + " and type " + fruitType + " is stored.";
+
+
+    }
 }

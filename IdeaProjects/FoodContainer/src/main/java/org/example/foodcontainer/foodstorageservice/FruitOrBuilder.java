@@ -8,21 +8,31 @@ public interface FruitOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string fruit_number = 1;</code>
+   * <code>string fruitCode = 1;</code>
    */
-  java.lang.String getFruitNumber();
+  java.lang.String getFruitCode();
   /**
-   * <code>string fruit_number = 1;</code>
+   * <code>string fruitCode = 1;</code>
    */
   com.google.protobuf.ByteString
-      getFruitNumberBytes();
+      getFruitCodeBytes();
 
   /**
-   * <code>string fruit = 2;</code>
+   * <code>string fruitType = 2;</code>
+   */
+  java.lang.String getFruitType();
+  /**
+   * <code>string fruitType = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getFruitTypeBytes();
+
+  /**
+   * <code>string fruit = 3;</code>
    */
   java.lang.String getFruit();
   /**
-   * <code>string fruit = 2;</code>
+   * <code>string fruit = 3;</code>
    */
   com.google.protobuf.ByteString
       getFruitBytes();
