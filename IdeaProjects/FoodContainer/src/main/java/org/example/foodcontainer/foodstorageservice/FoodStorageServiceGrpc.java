@@ -47,28 +47,28 @@ public final class FoodStorageServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest,
-      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes> getFruitStorageManyTimesMethod;
+      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple> getFruitStorageManyTimesMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "FruitStorageManyTimes",
       requestType = org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest.class,
-      responseType = org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes.class,
+      responseType = org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest,
-      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes> getFruitStorageManyTimesMethod() {
-    io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest, org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes> getFruitStorageManyTimesMethod;
+      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple> getFruitStorageManyTimesMethod() {
+    io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest, org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple> getFruitStorageManyTimesMethod;
     if ((getFruitStorageManyTimesMethod = FoodStorageServiceGrpc.getFruitStorageManyTimesMethod) == null) {
       synchronized (FoodStorageServiceGrpc.class) {
         if ((getFruitStorageManyTimesMethod = FoodStorageServiceGrpc.getFruitStorageManyTimesMethod) == null) {
           FoodStorageServiceGrpc.getFruitStorageManyTimesMethod = getFruitStorageManyTimesMethod =
-              io.grpc.MethodDescriptor.<org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest, org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes>newBuilder()
+              io.grpc.MethodDescriptor.<org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest, org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FruitStorageManyTimes"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes.getDefaultInstance()))
+                  org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple.getDefaultInstance()))
               .setSchemaDescriptor(new FoodStorageServiceMethodDescriptorSupplier("FruitStorageManyTimes"))
               .build();
         }
@@ -141,7 +141,7 @@ public final class FoodStorageServiceGrpc {
      * </pre>
      */
     default void fruitStorageManyTimes(org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest request,
-        io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes> responseObserver) {
+        io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFruitStorageManyTimesMethod(), responseObserver);
     }
   }
@@ -190,7 +190,7 @@ public final class FoodStorageServiceGrpc {
      * </pre>
      */
     public void fruitStorageManyTimes(org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest request,
-        io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes> responseObserver) {
+        io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getFruitStorageManyTimesMethod(), getCallOptions()), request, responseObserver);
     }
@@ -227,7 +227,7 @@ public final class FoodStorageServiceGrpc {
      * Streaming server
      * </pre>
      */
-    public java.util.Iterator<org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes> fruitStorageManyTimes(
+    public java.util.Iterator<org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple> fruitStorageManyTimes(
         org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getFruitStorageManyTimesMethod(), getCallOptions(), request);
@@ -288,7 +288,7 @@ public final class FoodStorageServiceGrpc {
           break;
         case METHODID_FRUIT_STORAGE_MANY_TIMES:
           serviceImpl.fruitStorageManyTimes((org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest) request,
-              (io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes>) responseObserver);
+              (io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -320,7 +320,7 @@ public final class FoodStorageServiceGrpc {
           io.grpc.stub.ServerCalls.asyncServerStreamingCall(
             new MethodHandlers<
               org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest,
-              org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes>(
+              org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple>(
                 service, METHODID_FRUIT_STORAGE_MANY_TIMES)))
         .build();
   }

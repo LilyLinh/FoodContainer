@@ -4,7 +4,7 @@ import io.grpc.stub.StreamObserver;
 import org.example.foodcontainer.foodstorageservice.FoodStorageServiceGrpc;
 import org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest;
 import org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse;
-import org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes;
+import org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple;
 
 public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
 
@@ -27,6 +27,13 @@ public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageSe
         // Notifies the customer that the call is completed.
         responseObserver.onCompleted();
         System.out.println(resultMsg);
+
+    }
+
+    public void storeFruitMultiple(FoodStorageServiceRequest request, StreamObserver<FoodStorageServiceResponseMultiple> responseObserver) {
+
+        String fruitCode = request.getFruit().getFruitCode();
+        String fruitType = request.getFruit().getFruitType();
 
     }
 }

@@ -3,8 +3,8 @@
 
 package org.example.foodcontainer.foodstorageservice;
 
-public interface FoodStorageServiceResponseManyTimesOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:org.sample.FoodContainer.FoodStorageServiceResponseManyTimes)
+public interface FoodStorageServiceResponseMultipleOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:org.sample.FoodContainer.FoodStorageServiceResponseMultiple)
     com.google.protobuf.MessageOrBuilder {
 
   /**

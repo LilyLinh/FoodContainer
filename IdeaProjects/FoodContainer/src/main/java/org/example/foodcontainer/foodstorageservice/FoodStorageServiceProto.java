@@ -30,10 +30,10 @@ public final class FoodStorageServiceProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_sample_FoodContainer_FoodStorageServiceResponseManyTimes_descriptor;
+    internal_static_org_sample_FoodContainer_FoodStorageServiceResponseMultiple_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_sample_FoodContainer_FoodStorageServiceResponseManyTimes_fieldAccessorTable;
+      internal_static_org_sample_FoodContainer_FoodStorageServiceResponseMultiple_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -48,18 +48,18 @@ public final class FoodStorageServiceProto {
       "\022\021\n\tfruitType\030\002 \001(\t\022\r\n\005fruit\030\003 \001(\t\"K\n\031Fo" +
       "odStorageServiceRequest\022.\n\005fruit\030\001 \001(\0132\037" +
       ".org.sample.FoodContainer.Fruit\",\n\032FoodS" +
-      "torageServiceResponse\022\016\n\006result\030\001 \001(\t\"5\n" +
-      "#FoodStorageServiceResponseManyTimes\022\016\n\006" +
-      "result\030\001 \001(\t2\237\002\n\022FoodStorageService\022y\n\014F" +
-      "ruitStorage\0223.org.sample.FoodContainer.F" +
-      "oodStorageServiceRequest\0324.org.sample.Fo" +
-      "odContainer.FoodStorageServiceResponse\022\215" +
-      "\001\n\025FruitStorageManyTimes\0223.org.sample.Fo" +
-      "odContainer.FoodStorageServiceRequest\032=." +
-      "org.sample.FoodContainer.FoodStorageServ" +
-      "iceResponseManyTimes0\001BI\n,org.example.fo" +
-      "odcontainer.foodstorageserviceB\027FoodStor" +
-      "ageServiceProtoP\001b\006proto3"
+      "torageServiceResponse\022\016\n\006result\030\001 \001(\t\"4\n" +
+      "\"FoodStorageServiceResponseMultiple\022\016\n\006r" +
+      "esult\030\001 \001(\t2\236\002\n\022FoodStorageService\022y\n\014Fr" +
+      "uitStorage\0223.org.sample.FoodContainer.Fo" +
+      "odStorageServiceRequest\0324.org.sample.Foo" +
+      "dContainer.FoodStorageServiceResponse\022\214\001" +
+      "\n\025FruitStorageManyTimes\0223.org.sample.Foo" +
+      "dContainer.FoodStorageServiceRequest\032<.o" +
+      "rg.sample.FoodContainer.FoodStorageServi" +
+      "ceResponseMultiple0\001BI\n,org.example.food" +
+      "container.foodstorageserviceB\027FoodStorag" +
+      "eServiceProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -91,11 +91,11 @@ public final class FoodStorageServiceProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_descriptor,
         new java.lang.String[] { "Result", });
-    internal_static_org_sample_FoodContainer_FoodStorageServiceResponseManyTimes_descriptor =
+    internal_static_org_sample_FoodContainer_FoodStorageServiceResponseMultiple_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_org_sample_FoodContainer_FoodStorageServiceResponseManyTimes_fieldAccessorTable = new
+    internal_static_org_sample_FoodContainer_FoodStorageServiceResponseMultiple_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_sample_FoodContainer_FoodStorageServiceResponseManyTimes_descriptor,
+        internal_static_org_sample_FoodContainer_FoodStorageServiceResponseMultiple_descriptor,
         new java.lang.String[] { "Result", });
   }
 

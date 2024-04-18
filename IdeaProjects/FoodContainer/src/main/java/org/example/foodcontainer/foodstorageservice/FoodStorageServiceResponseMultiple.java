@@ -4,18 +4,18 @@
 package org.example.foodcontainer.foodstorageservice;
 
 /**
- * Protobuf type {@code org.sample.FoodContainer.FoodStorageServiceResponseManyTimes}
+ * Protobuf type {@code org.sample.FoodContainer.FoodStorageServiceResponseMultiple}
  */
-public  final class FoodStorageServiceResponseManyTimes extends
+public  final class FoodStorageServiceResponseMultiple extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:org.sample.FoodContainer.FoodStorageServiceResponseManyTimes)
-    FoodStorageServiceResponseManyTimesOrBuilder {
+    // @@protoc_insertion_point(message_implements:org.sample.FoodContainer.FoodStorageServiceResponseMultiple)
+    FoodStorageServiceResponseMultipleOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use FoodStorageServiceResponseManyTimes.newBuilder() to construct.
-  private FoodStorageServiceResponseManyTimes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use FoodStorageServiceResponseMultiple.newBuilder() to construct.
+  private FoodStorageServiceResponseMultiple(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private FoodStorageServiceResponseManyTimes() {
+  private FoodStorageServiceResponseMultiple() {
     result_ = "";
   }
 
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private FoodStorageServiceResponseManyTimes(
+  private FoodStorageServiceResponseMultiple(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -70,15 +70,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponseManyTimes_descriptor;
+    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponseMultiple_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponseManyTimes_fieldAccessorTable
+    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponseMultiple_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes.class, org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes.Builder.class);
+            org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple.class, org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple.Builder.class);
   }
 
   public static final int RESULT_FIELD_NUMBER = 1;
@@ -154,10 +154,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes)) {
+    if (!(obj instanceof org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple)) {
       return super.equals(obj);
     }
-    org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes other = (org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes) obj;
+    org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple other = (org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple) obj;
 
     boolean result = true;
     result = result && getResult()
@@ -180,69 +180,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseFrom(byte[] data)
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseFrom(java.io.InputStream input)
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseDelimitedFrom(java.io.InputStream input)
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseDelimitedFrom(
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes prototype) {
+  public static Builder newBuilder(org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,26 +271,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code org.sample.FoodContainer.FoodStorageServiceResponseManyTimes}
+   * Protobuf type {@code org.sample.FoodContainer.FoodStorageServiceResponseMultiple}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:org.sample.FoodContainer.FoodStorageServiceResponseManyTimes)
-      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimesOrBuilder {
+      // @@protoc_insertion_point(builder_implements:org.sample.FoodContainer.FoodStorageServiceResponseMultiple)
+      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultipleOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponseManyTimes_descriptor;
+      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponseMultiple_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponseManyTimes_fieldAccessorTable
+      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponseMultiple_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes.class, org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes.Builder.class);
+              org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple.class, org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple.Builder.class);
     }
 
-    // Construct using org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes.newBuilder()
+    // Construct using org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -316,17 +316,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponseManyTimes_descriptor;
+      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponseMultiple_descriptor;
     }
 
     @java.lang.Override
-    public org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes getDefaultInstanceForType() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes.getDefaultInstance();
+    public org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple getDefaultInstanceForType() {
+      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes build() {
-      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes result = buildPartial();
+    public org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple build() {
+      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,8 +334,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes buildPartial() {
-      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes result = new org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes(this);
+    public org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple buildPartial() {
+      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple result = new org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple(this);
       result.result_ = result_;
       onBuilt();
       return result;
@@ -375,16 +375,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes) {
-        return mergeFrom((org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes)other);
+      if (other instanceof org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple) {
+        return mergeFrom((org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes other) {
-      if (other == org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes.getDefaultInstance()) return this;
+    public Builder mergeFrom(org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple other) {
+      if (other == org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple.getDefaultInstance()) return this;
       if (!other.getResult().isEmpty()) {
         result_ = other.result_;
         onChanged();
@@ -404,11 +404,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes parsedMessage = null;
+      org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes) e.getUnfinishedMessage();
+        parsedMessage = (org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -499,41 +499,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:org.sample.FoodContainer.FoodStorageServiceResponseManyTimes)
+    // @@protoc_insertion_point(builder_scope:org.sample.FoodContainer.FoodStorageServiceResponseMultiple)
   }
 
-  // @@protoc_insertion_point(class_scope:org.sample.FoodContainer.FoodStorageServiceResponseManyTimes)
-  private static final org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:org.sample.FoodContainer.FoodStorageServiceResponseMultiple)
+  private static final org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes();
+    DEFAULT_INSTANCE = new org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple();
   }
 
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes getDefaultInstance() {
+  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FoodStorageServiceResponseManyTimes>
-      PARSER = new com.google.protobuf.AbstractParser<FoodStorageServiceResponseManyTimes>() {
+  private static final com.google.protobuf.Parser<FoodStorageServiceResponseMultiple>
+      PARSER = new com.google.protobuf.AbstractParser<FoodStorageServiceResponseMultiple>() {
     @java.lang.Override
-    public FoodStorageServiceResponseManyTimes parsePartialFrom(
+    public FoodStorageServiceResponseMultiple parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new FoodStorageServiceResponseManyTimes(input, extensionRegistry);
+      return new FoodStorageServiceResponseMultiple(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<FoodStorageServiceResponseManyTimes> parser() {
+  public static com.google.protobuf.Parser<FoodStorageServiceResponseMultiple> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FoodStorageServiceResponseManyTimes> getParserForType() {
+  public com.google.protobuf.Parser<FoodStorageServiceResponseMultiple> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseManyTimes getDefaultInstanceForType() {
+  public org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

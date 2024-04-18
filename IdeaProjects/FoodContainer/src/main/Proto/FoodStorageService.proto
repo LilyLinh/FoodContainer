@@ -12,7 +12,7 @@ service FoodStorageService {
   rpc FruitStorage(FoodStorageServiceRequest) returns (FoodStorageServiceResponse);
 
   // Streaming server
-  rpc FruitStorageManyTimes(FoodStorageServiceRequest) returns (stream FoodStorageServiceResponseManyTimes);
+  rpc FruitStorageManyTimes(FoodStorageServiceRequest) returns (stream FoodStorageServiceResponseMultiple);
 
 }
 message Fruit {
@@ -29,7 +29,7 @@ message FoodStorageServiceResponse {
   string result = 1;
 }
 
-message FoodStorageServiceResponseManyTimes {
+message FoodStorageServiceResponseMultiple {
   string result = 1;
 }
 
