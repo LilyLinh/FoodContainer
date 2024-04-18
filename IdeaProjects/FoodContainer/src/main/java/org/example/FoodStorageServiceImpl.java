@@ -16,6 +16,17 @@ public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageSe
         System.out.println("The fruit of type " + fruitType + " and code " + fruitCode + " is stored the container.");
         String resultMsg = "The fruit of code " + fruitCode + " and type " + fruitType + " is stored.";
 
+        FoodStorageServiceResponse foodStorageServiceResponse = FoodStorageServiceResponse
+                .newBuilder()
+                .setResult(resultMsg)
+                .build();
+
+        // Send the response to the client.
+        responseObserver.onNext(foodStorageServiceResponse);
+
+        // Notifies the customer that the call is completed.
+        responseObserver.onCompleted();
+        System.out.println(resultMsg);
 
     }
 }
