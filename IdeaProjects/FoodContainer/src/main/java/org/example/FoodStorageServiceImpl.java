@@ -35,5 +35,13 @@ public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageSe
         String fruitCode = request.getFruit().getFruitCode();
         String fruitType = request.getFruit().getFruitType();
 
+        // Create response no.1 then send.
+        String responseNo1 = "The fruit with code " + fruitCode + " and type " + fruitType + " is stored in the container.";
+        System.out.println(responseNo1);
+        FoodStorageServiceResponseMultiple foodStorageServiceResponseNo1 = FoodStorageServiceResponseMultiple
+                .newBuilder()
+                .setResult(responseNo1)
+                .build();
+        responseObserver.onNext(foodStorageServiceResponseNo1);
     }
 }
