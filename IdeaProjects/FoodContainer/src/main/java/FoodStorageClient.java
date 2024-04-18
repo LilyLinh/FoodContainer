@@ -18,5 +18,16 @@ import java.util.List;
                     .usePlaintext()
                     .build();
 
+            // Auto generated stub class with the constructor wrapping the channel.
+            FoodStorageServiceGrpc.FoodStorageServiceBlockingStub stub =FoodStorageServiceGrpc.newBlockingStub(channel);
+
+            // Start calling the `FruitStorageService` method
+            FoodStorageServiceRequest foodStorageServiceRequest = FoodStorageServiceRequest.newBuilder()
+                    .setFruit(Fruit.newBuilder()
+                            .setFruitCode("NA-101")
+                            .setFruitType("In Bag")
+                            .build())
+                    .build();
+
         }
     }
