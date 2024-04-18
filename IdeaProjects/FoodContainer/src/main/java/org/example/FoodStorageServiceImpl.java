@@ -43,5 +43,27 @@ public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageSe
                 .setResult(responseNo1)
                 .build();
         responseObserver.onNext(foodStorageServiceResponseNo1);
+
+
+        //  Make thread wait for 6s then send response N0.2
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Create response no.2 then send.
+        String responseNo2 = "The fruit with code " + fruitCode + " and type " + fruitType + " is stored in the container.";
+        System.out.println(responseNo2);
+        FoodStorageServiceResponseMultiple foodStorageServiceResponseNo2 = FoodStorageServiceResponseMultiple
+                .newBuilder()
+                .setResult(responseNo2)
+                .build();
+        responseObserver.onNext(foodStorageServiceResponseNo1);
+
+        // Complete the communication.
+        responseObserver.onCompleted();
+
+        System.out.println(responseNo2);
     }
 }
