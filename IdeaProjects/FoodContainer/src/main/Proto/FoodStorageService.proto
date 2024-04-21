@@ -9,10 +9,10 @@ option java_outer_classname = "FoodStorageServiceProto";
 service FoodStorageService {
 
   // Unary
-  rpc FruitStorage(FoodStorageServiceRequest) returns (FoodStorageServiceResponse);
+  rpc fruitStorage(FoodStorageServiceRequest) returns (FoodStorageServiceResponse);
 
   // Streaming server
-  rpc FruitStorageManyTimes(FoodStorageServiceRequest) returns (stream FoodStorageServiceResponseMultiple);
+
 
 }
 message Fruit {
@@ -22,7 +22,9 @@ message Fruit {
 }
 
 message FoodStorageServiceRequest {
-  Fruit fruit = 1;
+  string fruit = 1;
+  string fruitCode = 2;
+  string fruitType = 3;
 }
 
 message FoodStorageServiceResponse {
@@ -30,6 +32,7 @@ message FoodStorageServiceResponse {
 }
 
 message FoodStorageServiceResponseMultiple {
-  string result = 1;
+ string result = 1;
+
 }
 

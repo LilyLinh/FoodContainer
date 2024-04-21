@@ -8,15 +8,32 @@ public interface FoodStorageServiceRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.org.sample.FoodContainer.Fruit fruit = 1;</code>
+   * <code>string fruit = 1;</code>
    */
-  boolean hasFruit();
+  java.lang.String getFruit();
   /**
-   * <code>.org.sample.FoodContainer.Fruit fruit = 1;</code>
+   * <code>string fruit = 1;</code>
    */
-  org.example.foodcontainer.foodstorageservice.Fruit getFruit();
+  com.google.protobuf.ByteString
+      getFruitBytes();
+
   /**
-   * <code>.org.sample.FoodContainer.Fruit fruit = 1;</code>
+   * <code>string fruitCode = 2;</code>
    */
-  org.example.foodcontainer.foodstorageservice.FruitOrBuilder getFruitOrBuilder();
+  java.lang.String getFruitCode();
+  /**
+   * <code>string fruitCode = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getFruitCodeBytes();
+
+  /**
+   * <code>string fruitType = 3;</code>
+   */
+  java.lang.String getFruitType();
+  /**
+   * <code>string fruitType = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getFruitTypeBytes();
 }

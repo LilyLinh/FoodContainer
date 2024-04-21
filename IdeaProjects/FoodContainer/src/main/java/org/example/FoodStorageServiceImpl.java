@@ -8,21 +8,21 @@ import org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMu
 
 public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
 
-    public void storeFruit(FoodStorageServiceRequest request, StreamObserver<FoodStorageServiceResponse> responseObserver) {
+    public void fruitStorage(FoodStorageServiceRequest request, StreamObserver<FoodStorageServiceResponse> responseObserver) {
 
-        String fruitCode = request.getFruit().getFruitCode();
-        String fruitType = request.getFruit().getFruitType();
+        String fruitCode = request.getFruitCode();
+        String fruitType = request.getFruitType();
 
         System.out.println("The fruit of type " + fruitType + " and code " + fruitCode + " is stored the container.");
         String resultMsg = "The fruit of code " + fruitCode + " and type " + fruitType + " is stored.";
 
-        FoodStorageServiceResponse foodStorageServiceResponse = FoodStorageServiceResponse
+        FoodStorageServiceResponse response = FoodStorageServiceResponse
                 .newBuilder()
                 .setResult(resultMsg)
                 .build();
 
         // Send the response to the client.
-        responseObserver.onNext(foodStorageServiceResponse);
+        responseObserver.onNext(response);
 
         // Notifies the customer that the call is completed.
         responseObserver.onCompleted();
@@ -30,40 +30,9 @@ public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageSe
 
     }
 
-    public void storeFruitMultiple(FoodStorageServiceRequest request, StreamObserver<FoodStorageServiceResponseMultiple> responseObserver) {
-
-        String fruitCode = request.getFruit().getFruitCode();
-        String fruitType = request.getFruit().getFruitType();
-
-        // Create response no.1 then send.
-        String responseNo1 = "The fruit with code " + fruitCode + " and type " + fruitType + " is stored in the container.";
-        System.out.println(responseNo1);
-        FoodStorageServiceResponseMultiple foodStorageServiceResponseNo1 = FoodStorageServiceResponseMultiple
-                .newBuilder()
-                .setResult(responseNo1)
-                .build();
-        responseObserver.onNext(foodStorageServiceResponseNo1);
-
 
         //  Make thread wait for 6s then send response N0.2
-        try {
-            Thread.sleep(6000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         // Create response no.2 then send.
-        String responseNo2 = "The fruit with code " + fruitCode + " and type " + fruitType + " is stored in the container.";
-        System.out.println(responseNo2);
-        FoodStorageServiceResponseMultiple foodStorageServiceResponseNo2 = FoodStorageServiceResponseMultiple
-                .newBuilder()
-                .setResult(responseNo2)
-                .build();
-        responseObserver.onNext(foodStorageServiceResponseNo1);
 
-        // Complete the communication.
-        responseObserver.onCompleted();
-
-        System.out.println(responseNo2);
-    }
 }
