@@ -46,6 +46,37 @@ public final class FoodStorageServiceGrpc {
     return getFruitStorageMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest,
+      org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse> getStreamFoodEmptySpaceUpdateRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "streamFoodEmptySpaceUpdateRequest",
+      requestType = org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest.class,
+      responseType = org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest,
+      org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse> getStreamFoodEmptySpaceUpdateRequestMethod() {
+    io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest, org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse> getStreamFoodEmptySpaceUpdateRequestMethod;
+    if ((getStreamFoodEmptySpaceUpdateRequestMethod = FoodStorageServiceGrpc.getStreamFoodEmptySpaceUpdateRequestMethod) == null) {
+      synchronized (FoodStorageServiceGrpc.class) {
+        if ((getStreamFoodEmptySpaceUpdateRequestMethod = FoodStorageServiceGrpc.getStreamFoodEmptySpaceUpdateRequestMethod) == null) {
+          FoodStorageServiceGrpc.getStreamFoodEmptySpaceUpdateRequestMethod = getStreamFoodEmptySpaceUpdateRequestMethod =
+              io.grpc.MethodDescriptor.<org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest, org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "streamFoodEmptySpaceUpdateRequest"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FoodStorageServiceMethodDescriptorSupplier("streamFoodEmptySpaceUpdateRequest"))
+              .build();
+        }
+      }
+    }
+    return getStreamFoodEmptySpaceUpdateRequestMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -103,6 +134,16 @@ public final class FoodStorageServiceGrpc {
         io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFruitStorageMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Server-side streaming RPC
+     * </pre>
+     */
+    default void streamFoodEmptySpaceUpdateRequest(org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest request,
+        io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStreamFoodEmptySpaceUpdateRequestMethod(), responseObserver);
+    }
   }
 
   /**
@@ -142,6 +183,17 @@ public final class FoodStorageServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFruitStorageMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Server-side streaming RPC
+     * </pre>
+     */
+    public void streamFoodEmptySpaceUpdateRequest(org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest request,
+        io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getStreamFoodEmptySpaceUpdateRequestMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -168,6 +220,17 @@ public final class FoodStorageServiceGrpc {
     public org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse fruitStorage(org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFruitStorageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Server-side streaming RPC
+     * </pre>
+     */
+    public java.util.Iterator<org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse> streamFoodEmptySpaceUpdateRequest(
+        org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getStreamFoodEmptySpaceUpdateRequestMethod(), getCallOptions(), request);
     }
   }
 
@@ -200,6 +263,7 @@ public final class FoodStorageServiceGrpc {
   }
 
   private static final int METHODID_FRUIT_STORAGE = 0;
+  private static final int METHODID_STREAM_FOOD_EMPTY_SPACE_UPDATE_REQUEST = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -221,6 +285,10 @@ public final class FoodStorageServiceGrpc {
         case METHODID_FRUIT_STORAGE:
           serviceImpl.fruitStorage((org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest) request,
               (io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse>) responseObserver);
+          break;
+        case METHODID_STREAM_FOOD_EMPTY_SPACE_UPDATE_REQUEST:
+          serviceImpl.streamFoodEmptySpaceUpdateRequest((org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest) request,
+              (io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -247,6 +315,13 @@ public final class FoodStorageServiceGrpc {
               org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest,
               org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse>(
                 service, METHODID_FRUIT_STORAGE)))
+        .addMethod(
+          getStreamFoodEmptySpaceUpdateRequestMethod(),
+          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+            new MethodHandlers<
+              org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest,
+              org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse>(
+                service, METHODID_STREAM_FOOD_EMPTY_SPACE_UPDATE_REQUEST)))
         .build();
   }
 
@@ -296,6 +371,7 @@ public final class FoodStorageServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new FoodStorageServiceFileDescriptorSupplier())
               .addMethod(getFruitStorageMethod())
+              .addMethod(getStreamFoodEmptySpaceUpdateRequestMethod())
               .build();
         }
       }

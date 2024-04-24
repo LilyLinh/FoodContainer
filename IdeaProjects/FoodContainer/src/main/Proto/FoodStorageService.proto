@@ -11,7 +11,8 @@ service FoodStorageService {
   // Unary
   rpc fruitStorage(FoodStorageServiceRequest) returns (FoodStorageServiceResponse);
 
-  // Streaming server
+  // Server-side streaming RPC
+  rpc streamFoodEmptySpaceUpdateRequest(StreamFoodEmptySpaceUpdateRequest) returns (stream StreamFoodEmptySpaceUpdateResponse);
 
 
 }
@@ -31,8 +32,12 @@ message FoodStorageServiceResponse {
   string result = 1;
 }
 
-message FoodStorageServiceResponseMultiple {
- string result = 1;
 
+message StreamFoodEmptySpaceUpdateRequest {
+  string spaceQuery= 1;
+}
+
+message StreamFoodEmptySpaceUpdateResponse {
+  string spaceUpdate= 1;
 }
 

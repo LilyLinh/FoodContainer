@@ -1,10 +1,13 @@
 package org.example;
 
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
-import org.example.foodcontainer.foodstorageservice.FoodStorageServiceGrpc;
+import org.example.foodcontainer.foodstorageservice.*;
 import org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest;
-import org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse;
-import org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseMultiple;
+
+import java.util.concurrent.TimeUnit;
+
 
 public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
 
@@ -30,9 +33,21 @@ public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageSe
 
     }
 
+  //  public void streamFoodEmptySpaceUpdateRequest(StreamFoodEmptySpaceUpdateRequest request, StreamObserver<StreamFoodEmptySpaceUpdateResponse> responseObserver) {
+       // Server grpcServer = ServerBuilder.forPort(8500)
+             //   .addService(new FoodStorageServer.FoodStorageServiceImpl())
+              //  .build();
+
+
+
+        // Graceful shutdown
+
+
+
+    }
+        // Send the response to the client.
 
         //  Make thread wait for 6s then send response N0.2
 
         // Create response no.2 then send.
 
-}
