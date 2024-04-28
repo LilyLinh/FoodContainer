@@ -12,7 +12,7 @@ public final class FoodStorageServiceGrpc {
 
   private FoodStorageServiceGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "org.sample.FoodContainer.FoodStorageService";
+  public static final java.lang.String SERVICE_NAME = "org.example.FoodContainer.FoodStorageService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest,

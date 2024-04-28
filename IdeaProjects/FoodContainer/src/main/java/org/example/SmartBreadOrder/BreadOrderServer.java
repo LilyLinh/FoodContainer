@@ -1,13 +1,15 @@
-package org.example;
+package org.example.SmartBreadOrder;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import com.ecwid.consul.v1.ConsulClient;
 import com.ecwid.consul.v1.agent.model.NewService;
-import org.example.SmartFoodStorage.FoodStorageServiceImpl;
-import org.example.foodcontainer.foodstorageservice.*;
-
+import org.example.SmartBreadOrder.BreadOrderServiceImpl;
+import org.example.SmartBreadOrder.*;
+import org.example.foodcontainer.breadorderservice.BreadOrderServiceGrpc;
+import org.example.foodcontainer.breadorderservice.StreamBreadOrderRequest;
+import org.example.foodcontainer.breadorderservice.StreamBreadOrderResponse;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -15,15 +17,14 @@ import java.net.UnknownHostException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
+public class BreadOrderServer extends BreadOrderServiceGrpc.BreadOrderServiceImplBase {
     private Server server;
-    //private static final AtomicInteger fruitBoxCount = new AtomicInteger(0); // Step 1
 
     public void start() throws IOException {
         /* The port on which the server should run */
-        int port = 50055;
+        int port = 50052;
         server = ServerBuilder.forPort(port)
-                .addService(new FoodStorageServiceImpl())
+                .addService(new BreadOrderServiceImpl())
                 .build()
                 .start();
         System.out.println("Server started, listening on " + port);
@@ -60,7 +61,7 @@ public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageService
 
         // Load Consul configuration from consul.properties file
         Properties props = new Properties();
-        try (FileInputStream fis = new FileInputStream("src/main/resources/consul.properties")) {
+        try (FileInputStream fis = new FileInputStream("src/main/resources/breadorder.properties")) {
             props.load(fis);
         } catch (IOException e) {
             e.printStackTrace();
@@ -98,23 +99,16 @@ public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageService
     }
 
     //static class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
-    @Override
-    public void fruitStorage(FoodStorageServiceRequest
-                                     request, StreamObserver<FoodStorageServiceResponse> responseObserver) {
 
-   }
 
-    @Override
-    public void streamFoodEmptySpaceUpdateRequest(StreamFoodEmptySpaceUpdateRequest request, StreamObserver<StreamFoodEmptySpaceUpdateResponse> responseObserver) {
 
-    }
-    @Override
-    public StreamObserver<StreamClientFruitTypeOrderRequest> streamClientFruitTypeOrderRequest(StreamObserver<StreamClientFruitTypeOrderResponse> responseObserver) {
-        return new StreamObserver<StreamClientFruitTypeOrderRequest>() {
+    public  StreamObserver<StreamBreadOrderRequest> BreadOrderRequest
+            (StreamObserver<StreamBreadOrderResponse> responseObserver){
+        return new StreamObserver<StreamBreadOrderRequest>(){
             @Override
-            public void onNext(StreamClientFruitTypeOrderRequest fruitType) {
-                System.out.println("Received client information:");
-                System.out.println("Client Name: " + fruitType.getFruitType());
+            public void onNext(StreamBreadOrderRequest breadRequest) {
+                System.out.println("Received client request:");
+                System.out.println("Get " + breadRequest.getOrderRequest());
             }
 
             @Override
@@ -125,32 +119,26 @@ public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageService
             @Override
             public void onCompleted() {
                 System.out.println("Client information streaming completed");
-                StreamClientFruitTypeOrderResponse response = StreamClientFruitTypeOrderResponse.newBuilder()
-                        .setResult2("Client information streaming completed")
+                StreamBreadOrderResponse response = StreamBreadOrderResponse.newBuilder()
+                        .setOrderResponse("Client information streaming completed")
                         .build();
                 responseObserver.onNext(response);
                 responseObserver.onCompleted();
             }
         };
+
     }
 
+
+
     public static void main(String[] args) throws IOException, InterruptedException {
-        final FoodStorageServer server = new FoodStorageServer();
+        final BreadOrderServer server = new BreadOrderServer();
         server.start();
-//        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-//            System.out.println("Shutting down gRPC server");
-//            try {
-//                server.stop().awaitTermination(30, TimeUnit.SECONDS);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace(System.err);
-//            }
-//        }));
-       // server.awaitTermination();
         server.blockUntilShutdown();
 
 
     }
-    }
+}
 
 
 

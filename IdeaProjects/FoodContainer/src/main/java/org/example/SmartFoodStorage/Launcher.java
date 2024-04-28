@@ -1,5 +1,6 @@
-package org.example;
+package org.example.SmartFoodStorage;
 import org.example.FoodStorageServer;
+
 import java.io.IOException;
 
 

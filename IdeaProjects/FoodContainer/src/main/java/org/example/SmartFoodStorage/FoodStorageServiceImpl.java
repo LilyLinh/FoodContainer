@@ -1,15 +1,11 @@
-package org.example;
+package org.example.SmartFoodStorage;
 
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import org.example.foodcontainer.foodstorageservice.*;
 import org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest;
 
 import java.time.LocalDateTime;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import java.util.concurrent.TimeUnit;
 
 
 public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {

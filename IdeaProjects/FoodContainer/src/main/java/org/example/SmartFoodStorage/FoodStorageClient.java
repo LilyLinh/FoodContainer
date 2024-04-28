@@ -1,4 +1,4 @@
-
+package org.example.SmartFoodStorage;
 import io.grpc.LoadBalancer;
 import org.example.FoodStorageServer;
 import org.example.foodcontainer.foodstorageservice.*;
@@ -16,7 +16,6 @@ import java.util.concurrent.TimeUnit;
 
 
 public class FoodStorageClient {
-
     private final ConsulClient consulClient;
     private final String consulServiceName;
 
@@ -161,19 +160,4 @@ public class FoodStorageClient {
 //        }
     }
 
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

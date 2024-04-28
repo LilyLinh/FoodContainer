@@ -4,11 +4,11 @@
 package org.example.foodcontainer.foodstorageservice;
 
 /**
- * Protobuf type {@code org.sample.FoodContainer.FoodStorageServiceResponse}
+ * Protobuf type {@code org.example.FoodContainer.FoodStorageServiceResponse}
  */
 public  final class FoodStorageServiceResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:org.sample.FoodContainer.FoodStorageServiceResponse)
+    // @@protoc_insertion_point(message_implements:org.example.FoodContainer.FoodStorageServiceResponse)
     FoodStorageServiceResponseOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use FoodStorageServiceResponse.newBuilder() to construct.
@@ -70,13 +70,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_descriptor;
+    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_example_FoodContainer_FoodStorageServiceResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_fieldAccessorTable
+    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_example_FoodContainer_FoodStorageServiceResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse.class, org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse.Builder.class);
   }
@@ -271,21 +271,21 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code org.sample.FoodContainer.FoodStorageServiceResponse}
+   * Protobuf type {@code org.example.FoodContainer.FoodStorageServiceResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:org.sample.FoodContainer.FoodStorageServiceResponse)
+      // @@protoc_insertion_point(builder_implements:org.example.FoodContainer.FoodStorageServiceResponse)
       org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_descriptor;
+      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_example_FoodContainer_FoodStorageServiceResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_fieldAccessorTable
+      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_example_FoodContainer_FoodStorageServiceResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse.class, org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse.Builder.class);
     }
@@ -316,7 +316,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_descriptor;
+      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_example_FoodContainer_FoodStorageServiceResponse_descriptor;
     }
 
     @java.lang.Override
@@ -499,10 +499,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:org.sample.FoodContainer.FoodStorageServiceResponse)
+    // @@protoc_insertion_point(builder_scope:org.example.FoodContainer.FoodStorageServiceResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:org.sample.FoodContainer.FoodStorageServiceResponse)
+  // @@protoc_insertion_point(class_scope:org.example.FoodContainer.FoodStorageServiceResponse)
   private static final org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse();

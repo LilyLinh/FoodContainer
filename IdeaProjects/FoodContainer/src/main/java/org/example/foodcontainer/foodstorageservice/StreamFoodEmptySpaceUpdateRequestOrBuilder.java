@@ -4,7 +4,7 @@
 package org.example.foodcontainer.foodstorageservice;
 
 public interface StreamFoodEmptySpaceUpdateRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:org.sample.FoodContainer.StreamFoodEmptySpaceUpdateRequest)
+    // @@protoc_insertion_point(interface_extends:org.example.FoodContainer.StreamFoodEmptySpaceUpdateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**

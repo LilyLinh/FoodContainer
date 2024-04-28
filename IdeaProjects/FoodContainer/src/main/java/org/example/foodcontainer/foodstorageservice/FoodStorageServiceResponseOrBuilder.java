@@ -4,7 +4,7 @@
 package org.example.foodcontainer.foodstorageservice;
 
 public interface FoodStorageServiceResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:org.sample.FoodContainer.FoodStorageServiceResponse)
+    // @@protoc_insertion_point(interface_extends:org.example.FoodContainer.FoodStorageServiceResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

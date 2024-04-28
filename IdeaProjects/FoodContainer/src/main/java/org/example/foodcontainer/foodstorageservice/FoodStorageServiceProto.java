@@ -15,35 +15,35 @@ public final class FoodStorageServiceProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_descriptor;
+    internal_static_org_example_FoodContainer_FoodStorageServiceRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_fieldAccessorTable;
+      internal_static_org_example_FoodContainer_FoodStorageServiceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_descriptor;
+    internal_static_org_example_FoodContainer_FoodStorageServiceResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_fieldAccessorTable;
+      internal_static_org_example_FoodContainer_FoodStorageServiceResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_sample_FoodContainer_StreamFoodEmptySpaceUpdateRequest_descriptor;
+    internal_static_org_example_FoodContainer_StreamFoodEmptySpaceUpdateRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_sample_FoodContainer_StreamFoodEmptySpaceUpdateRequest_fieldAccessorTable;
+      internal_static_org_example_FoodContainer_StreamFoodEmptySpaceUpdateRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_sample_FoodContainer_StreamFoodEmptySpaceUpdateResponse_descriptor;
+    internal_static_org_example_FoodContainer_StreamFoodEmptySpaceUpdateResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_sample_FoodContainer_StreamFoodEmptySpaceUpdateResponse_fieldAccessorTable;
+      internal_static_org_example_FoodContainer_StreamFoodEmptySpaceUpdateResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderRequest_descriptor;
+    internal_static_org_example_FoodContainer_StreamClientFruitTypeOrderRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderRequest_fieldAccessorTable;
+      internal_static_org_example_FoodContainer_StreamClientFruitTypeOrderRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderResponse_descriptor;
+    internal_static_org_example_FoodContainer_StreamClientFruitTypeOrderResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderResponse_fieldAccessorTable;
+      internal_static_org_example_FoodContainer_StreamClientFruitTypeOrderResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -53,34 +53,34 @@ public final class FoodStorageServiceProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030FoodStorageService.proto\022\030org.sample.F" +
-      "oodContainer\"*\n\031FoodStorageServiceReques" +
-      "t\022\r\n\005fruit\030\001 \001(\t\",\n\032FoodStorageServiceRe" +
-      "sponse\022\016\n\006result\030\001 \001(\t\"7\n!StreamFoodEmpt" +
-      "ySpaceUpdateRequest\022\022\n\nspaceQuery\030\001 \001(\t\"" +
-      "9\n\"StreamFoodEmptySpaceUpdateResponse\022\023\n" +
-      "\013spaceUpdate\030\001 \001(\t\"6\n!StreamClientFruitT" +
-      "ypeOrderRequest\022\021\n\tfruitType\030\001 \001(\t\"5\n\"St" +
-      "reamClientFruitTypeOrderResponse\022\017\n\007resu" +
-      "lt2\030\001 \001(\t2\373\004\n\022FoodStorageService\022y\n\014frui" +
-      "tStorage\0223.org.sample.FoodContainer.Food" +
-      "StorageServiceRequest\0324.org.sample.FoodC" +
-      "ontainer.FoodStorageServiceResponse\022\240\001\n!" +
-      "streamFoodEmptySpaceUpdateRequest\022;.org." +
-      "sample.FoodContainer.StreamFoodEmptySpac" +
-      "eUpdateRequest\032<.org.sample.FoodContaine" +
-      "r.StreamFoodEmptySpaceUpdateResponse0\001\022\240" +
-      "\001\n!streamClientFruitTypeOrderRequest\022;.o" +
-      "rg.sample.FoodContainer.StreamClientFrui" +
-      "tTypeOrderRequest\032<.org.sample.FoodConta" +
-      "iner.StreamClientFruitTypeOrderResponse(" +
-      "\001\022\243\001\n\"biDirectionalFruitTypeOrderRequest" +
-      "\022;.org.sample.FoodContainer.StreamClient" +
-      "FruitTypeOrderRequest\032<.org.sample.FoodC" +
-      "ontainer.StreamClientFruitTypeOrderRespo" +
-      "nse(\0010\001BI\n,org.example.foodcontainer.foo" +
-      "dstorageserviceB\027FoodStorageServiceProto" +
-      "P\001b\006proto3"
+      "\n\030FoodStorageService.proto\022\031org.example." +
+      "FoodContainer\"*\n\031FoodStorageServiceReque" +
+      "st\022\r\n\005fruit\030\001 \001(\t\",\n\032FoodStorageServiceR" +
+      "esponse\022\016\n\006result\030\001 \001(\t\"7\n!StreamFoodEmp" +
+      "tySpaceUpdateRequest\022\022\n\nspaceQuery\030\001 \001(\t" +
+      "\"9\n\"StreamFoodEmptySpaceUpdateResponse\022\023" +
+      "\n\013spaceUpdate\030\001 \001(\t\"6\n!StreamClientFruit" +
+      "TypeOrderRequest\022\021\n\tfruitType\030\001 \001(\t\"5\n\"S" +
+      "treamClientFruitTypeOrderResponse\022\017\n\007res" +
+      "ult2\030\001 \001(\t2\203\005\n\022FoodStorageService\022{\n\014fru" +
+      "itStorage\0224.org.example.FoodContainer.Fo" +
+      "odStorageServiceRequest\0325.org.example.Fo" +
+      "odContainer.FoodStorageServiceResponse\022\242" +
+      "\001\n!streamFoodEmptySpaceUpdateRequest\022<.o" +
+      "rg.example.FoodContainer.StreamFoodEmpty" +
+      "SpaceUpdateRequest\032=.org.example.FoodCon" +
+      "tainer.StreamFoodEmptySpaceUpdateRespons" +
+      "e0\001\022\242\001\n!streamClientFruitTypeOrderReques" +
+      "t\022<.org.example.FoodContainer.StreamClie" +
+      "ntFruitTypeOrderRequest\032=.org.example.Fo" +
+      "odContainer.StreamClientFruitTypeOrderRe" +
+      "sponse(\001\022\245\001\n\"biDirectionalFruitTypeOrder" +
+      "Request\022<.org.example.FoodContainer.Stre" +
+      "amClientFruitTypeOrderRequest\032=.org.exam" +
+      "ple.FoodContainer.StreamClientFruitTypeO" +
+      "rderResponse(\0010\001BI\n,org.example.foodcont" +
+      "ainer.foodstorageserviceB\027FoodStorageSer" +
+      "viceProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -94,41 +94,41 @@ public final class FoodStorageServiceProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_descriptor =
+    internal_static_org_example_FoodContainer_FoodStorageServiceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_fieldAccessorTable = new
+    internal_static_org_example_FoodContainer_FoodStorageServiceRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_descriptor,
+        internal_static_org_example_FoodContainer_FoodStorageServiceRequest_descriptor,
         new java.lang.String[] { "Fruit", });
-    internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_descriptor =
+    internal_static_org_example_FoodContainer_FoodStorageServiceResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_fieldAccessorTable = new
+    internal_static_org_example_FoodContainer_FoodStorageServiceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_sample_FoodContainer_FoodStorageServiceResponse_descriptor,
+        internal_static_org_example_FoodContainer_FoodStorageServiceResponse_descriptor,
         new java.lang.String[] { "Result", });
-    internal_static_org_sample_FoodContainer_StreamFoodEmptySpaceUpdateRequest_descriptor =
+    internal_static_org_example_FoodContainer_StreamFoodEmptySpaceUpdateRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_org_sample_FoodContainer_StreamFoodEmptySpaceUpdateRequest_fieldAccessorTable = new
+    internal_static_org_example_FoodContainer_StreamFoodEmptySpaceUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_sample_FoodContainer_StreamFoodEmptySpaceUpdateRequest_descriptor,
+        internal_static_org_example_FoodContainer_StreamFoodEmptySpaceUpdateRequest_descriptor,
         new java.lang.String[] { "SpaceQuery", });
-    internal_static_org_sample_FoodContainer_StreamFoodEmptySpaceUpdateResponse_descriptor =
+    internal_static_org_example_FoodContainer_StreamFoodEmptySpaceUpdateResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_org_sample_FoodContainer_StreamFoodEmptySpaceUpdateResponse_fieldAccessorTable = new
+    internal_static_org_example_FoodContainer_StreamFoodEmptySpaceUpdateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_sample_FoodContainer_StreamFoodEmptySpaceUpdateResponse_descriptor,
+        internal_static_org_example_FoodContainer_StreamFoodEmptySpaceUpdateResponse_descriptor,
         new java.lang.String[] { "SpaceUpdate", });
-    internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderRequest_descriptor =
+    internal_static_org_example_FoodContainer_StreamClientFruitTypeOrderRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderRequest_fieldAccessorTable = new
+    internal_static_org_example_FoodContainer_StreamClientFruitTypeOrderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderRequest_descriptor,
+        internal_static_org_example_FoodContainer_StreamClientFruitTypeOrderRequest_descriptor,
         new java.lang.String[] { "FruitType", });
-    internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderResponse_descriptor =
+    internal_static_org_example_FoodContainer_StreamClientFruitTypeOrderResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderResponse_fieldAccessorTable = new
+    internal_static_org_example_FoodContainer_StreamClientFruitTypeOrderResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderResponse_descriptor,
+        internal_static_org_example_FoodContainer_StreamClientFruitTypeOrderResponse_descriptor,
         new java.lang.String[] { "Result2", });
   }
 
