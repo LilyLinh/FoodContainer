@@ -19,7 +19,7 @@ public final class BreadOrderServiceGrpc {
       org.example.foodcontainer.breadorderservice.StreamBreadOrderResponse> getBreadOrderRequestMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "BreadOrderRequest",
+      fullMethodName = SERVICE_NAME + '/' + "breadOrderRequest",
       requestType = org.example.foodcontainer.breadorderservice.StreamBreadOrderRequest.class,
       responseType = org.example.foodcontainer.breadorderservice.StreamBreadOrderResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
@@ -32,13 +32,13 @@ public final class BreadOrderServiceGrpc {
           BreadOrderServiceGrpc.getBreadOrderRequestMethod = getBreadOrderRequestMethod =
               io.grpc.MethodDescriptor.<org.example.foodcontainer.breadorderservice.StreamBreadOrderRequest, org.example.foodcontainer.breadorderservice.StreamBreadOrderResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BreadOrderRequest"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "breadOrderRequest"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.example.foodcontainer.breadorderservice.StreamBreadOrderRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.example.foodcontainer.breadorderservice.StreamBreadOrderResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new BreadOrderServiceMethodDescriptorSupplier("BreadOrderRequest"))
+              .setSchemaDescriptor(new BreadOrderServiceMethodDescriptorSupplier("breadOrderRequest"))
               .build();
         }
       }

@@ -2,14 +2,14 @@ syntax = "proto3";
 
 package org.example.FoodContainer;
 option java_multiple_files =  true;
-option java_package = "org.example.foodcontainer.proto.breadorderservice";
+option java_package = "org.example.foodcontainer.breadorderservice";
 option java_outer_classname = "BreadOrderServiceProto";
 
 
 service BreadOrderService {
 
   // Client-side streaming RPC
-  rpc BreadOrderRequest(stream StreamBreadOrderRequest) returns ( StreamBreadOrderResponse);
+  rpc breadOrderRequest(stream StreamBreadOrderRequest) returns ( StreamBreadOrderResponse);
 }
 
 message StreamBreadOrderRequest {

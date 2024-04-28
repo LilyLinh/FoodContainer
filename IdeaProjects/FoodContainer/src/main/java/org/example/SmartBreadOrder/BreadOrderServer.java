@@ -98,17 +98,15 @@ public class BreadOrderServer extends BreadOrderServiceGrpc.BreadOrderServiceImp
         System.out.println("Server registered to Consul successfully. Host: " + hostAddress);
     }
 
-    //static class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
-
-
-
-    public  StreamObserver<StreamBreadOrderRequest> BreadOrderRequest
-            (StreamObserver<StreamBreadOrderResponse> responseObserver){
-        return new StreamObserver<StreamBreadOrderRequest>(){
+    @Override
+    public StreamObserver<StreamBreadOrderRequest> breadOrderRequest
+            (StreamObserver<StreamBreadOrderResponse> responseObserver) {
+        return new StreamObserver<StreamBreadOrderRequest>() {
             @Override
             public void onNext(StreamBreadOrderRequest breadRequest) {
                 System.out.println("Received client request:");
-                System.out.println("Get " + breadRequest.getOrderRequest());
+                System.out.println("Get " + breadRequest.getOrderRequest() + " "
+                        + breadRequest.getOrderTime());
             }
 
             @Override
@@ -126,22 +124,17 @@ public class BreadOrderServer extends BreadOrderServiceGrpc.BreadOrderServiceImp
                 responseObserver.onCompleted();
             }
         };
-
     }
 
-
-
     public static void main(String[] args) throws IOException, InterruptedException {
-        final BreadOrderServer server = new BreadOrderServer();
+        //final BreadOrderServer server = new BreadOrderServer();
+        BreadOrderServer server = new BreadOrderServer();
         server.start();
         server.blockUntilShutdown();
 
+    }
 
     }
-}
-
-
-
 
 
 

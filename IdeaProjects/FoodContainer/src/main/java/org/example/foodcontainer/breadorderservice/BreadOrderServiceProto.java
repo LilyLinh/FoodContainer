@@ -37,7 +37,7 @@ public final class BreadOrderServiceProto {
       "oodContainer\"B\n\027StreamBreadOrderRequest\022" +
       "\024\n\014OrderRequest\030\001 \001(\t\022\021\n\torderTime\030\002 \001(\t" +
       "\"1\n\030StreamBreadOrderResponse\022\025\n\rOrderRes" +
-      "ponse\030\001 \001(\t2\223\001\n\021BreadOrderService\022~\n\021Bre" +
+      "ponse\030\001 \001(\t2\223\001\n\021BreadOrderService\022~\n\021bre" +
       "adOrderRequest\0222.org.example.FoodContain" +
       "er.StreamBreadOrderRequest\0323.org.example" +
       ".FoodContainer.StreamBreadOrderResponse(" +

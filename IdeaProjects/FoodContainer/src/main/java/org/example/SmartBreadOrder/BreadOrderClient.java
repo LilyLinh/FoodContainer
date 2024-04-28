@@ -17,14 +17,16 @@ import java.util.concurrent.TimeUnit;
 public class BreadOrderClient {
     private final ConsulClient consulClient;
     private final String consulServiceName;
-    //private ManagedChannel channel;
+    private ManagedChannel channel;
+
+
 
     public BreadOrderClient(String consulHost, int consulPort, String consulServiceName) {
         this.consulClient = new ConsulClient(consulHost, consulPort);
         this.consulServiceName = consulServiceName;
     }
 
-    public void BreadOrderRequest() {
+    public void breadOrderRequest() {
         List<HealthService> healthServices = consulClient.getHealthServices(consulServiceName, true, null).getValue();
         if (healthServices.isEmpty()) {
             System.err.println("No healthy instances of " + consulServiceName + " found in Consul.");
@@ -75,11 +77,11 @@ public class BreadOrderClient {
         try {
             while (true) {
                 String orderTime = LocalDateTime.now().toString();
-                StreamBreadOrderRequest breadOrderRequest = StreamBreadOrderRequest.newBuilder()
+                StreamBreadOrderRequest breadRequest = StreamBreadOrderRequest.newBuilder()
                         .setOrderRequest("Order one bread box")
                         .setOrderTime(orderTime)
                         .build();
-                requestObserver.onNext(breadOrderRequest);
+                requestObserver.onNext(breadRequest);
                 Thread.sleep(5000); // Send information every 5 seconds
             }
         } catch (InterruptedException e) {
@@ -88,19 +90,21 @@ public class BreadOrderClient {
         requestObserver.onCompleted();
     }
 
-//    public void shutdown() throws InterruptedException {
-//        channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
-//    }
+        public void shutdown () throws InterruptedException {
+            channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
+        }
+
 
     public static void main(String[] args) throws InterruptedException {
         String consulHost = "localhost"; // Consul host
         int consulPort = 8500; // Consul port
         String consulServiceName = "Bread-Order-service"; // Name of the service registered in Consul
         BreadOrderClient client = new BreadOrderClient(consulHost, consulPort, consulServiceName);
-        client.BreadOrderRequest();
-        Thread streamThread = new Thread(() -> client.BreadOrderRequest());
+
+         Thread streamThread = new Thread(() -> client.breadOrderRequest());
+        //Thread streamThread = new Thread(client::breadOrderRequest);
         streamThread.start();
-        client.BreadOrderRequest();
+//        client.breadOrderRequest();
         // Wait for user input to stop streaming
         System.out.println("Press 'Q' to stop streaming client information");
         Scanner scanner = new Scanner(System.in);
@@ -112,7 +116,7 @@ public class BreadOrderClient {
             }
         }
          //Shutdown client
-//        client.shutdown();
+       client.shutdown();
     }
 }
 
