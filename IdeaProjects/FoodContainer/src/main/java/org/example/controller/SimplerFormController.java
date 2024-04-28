@@ -111,18 +111,12 @@ public class SimplerFormController {
                 System.out.println("Server streaming completed");
             }
         };
-        // Schedule a task to stop the server after 5 seconds
+
 
         StreamFoodEmptySpaceUpdateRequest request = StreamFoodEmptySpaceUpdateRequest.newBuilder()
                 .setSpaceQuery("Client: Add fruit box automatically")
                 .build();
         stub.streamFoodEmptySpaceUpdateRequest(request, responseObserver);
-
-//        try {
-//            Thread.sleep(7000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
 
         if (isContainerOpen2) {
             try {
@@ -130,13 +124,8 @@ public class SimplerFormController {
             } catch (InterruptedException e) {
                 System.err.println("Error while shutting down client: " + e.getMessage());
             }
-
         }
-
     }
-
-
-
 }
 
 
