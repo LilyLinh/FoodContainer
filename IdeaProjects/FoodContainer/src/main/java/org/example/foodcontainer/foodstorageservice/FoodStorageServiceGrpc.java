@@ -77,6 +77,68 @@ public final class FoodStorageServiceGrpc {
     return getStreamFoodEmptySpaceUpdateRequestMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest,
+      org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse> getStreamClientFruitTypeOrderRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "streamClientFruitTypeOrderRequest",
+      requestType = org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest.class,
+      responseType = org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest,
+      org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse> getStreamClientFruitTypeOrderRequestMethod() {
+    io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest, org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse> getStreamClientFruitTypeOrderRequestMethod;
+    if ((getStreamClientFruitTypeOrderRequestMethod = FoodStorageServiceGrpc.getStreamClientFruitTypeOrderRequestMethod) == null) {
+      synchronized (FoodStorageServiceGrpc.class) {
+        if ((getStreamClientFruitTypeOrderRequestMethod = FoodStorageServiceGrpc.getStreamClientFruitTypeOrderRequestMethod) == null) {
+          FoodStorageServiceGrpc.getStreamClientFruitTypeOrderRequestMethod = getStreamClientFruitTypeOrderRequestMethod =
+              io.grpc.MethodDescriptor.<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest, org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "streamClientFruitTypeOrderRequest"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FoodStorageServiceMethodDescriptorSupplier("streamClientFruitTypeOrderRequest"))
+              .build();
+        }
+      }
+    }
+    return getStreamClientFruitTypeOrderRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest,
+      org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse> getBiDirectionalFruitTypeOrderRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "biDirectionalFruitTypeOrderRequest",
+      requestType = org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest.class,
+      responseType = org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest,
+      org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse> getBiDirectionalFruitTypeOrderRequestMethod() {
+    io.grpc.MethodDescriptor<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest, org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse> getBiDirectionalFruitTypeOrderRequestMethod;
+    if ((getBiDirectionalFruitTypeOrderRequestMethod = FoodStorageServiceGrpc.getBiDirectionalFruitTypeOrderRequestMethod) == null) {
+      synchronized (FoodStorageServiceGrpc.class) {
+        if ((getBiDirectionalFruitTypeOrderRequestMethod = FoodStorageServiceGrpc.getBiDirectionalFruitTypeOrderRequestMethod) == null) {
+          FoodStorageServiceGrpc.getBiDirectionalFruitTypeOrderRequestMethod = getBiDirectionalFruitTypeOrderRequestMethod =
+              io.grpc.MethodDescriptor.<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest, org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "biDirectionalFruitTypeOrderRequest"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FoodStorageServiceMethodDescriptorSupplier("biDirectionalFruitTypeOrderRequest"))
+              .build();
+        }
+      }
+    }
+    return getBiDirectionalFruitTypeOrderRequestMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -144,6 +206,20 @@ public final class FoodStorageServiceGrpc {
         io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStreamFoodEmptySpaceUpdateRequestMethod(), responseObserver);
     }
+
+    /**
+     */
+    default io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest> streamClientFruitTypeOrderRequest(
+        io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getStreamClientFruitTypeOrderRequestMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest> biDirectionalFruitTypeOrderRequest(
+        io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getBiDirectionalFruitTypeOrderRequestMethod(), responseObserver);
+    }
   }
 
   /**
@@ -193,6 +269,22 @@ public final class FoodStorageServiceGrpc {
         io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getStreamFoodEmptySpaceUpdateRequestMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest> streamClientFruitTypeOrderRequest(
+        io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getStreamClientFruitTypeOrderRequestMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest> biDirectionalFruitTypeOrderRequest(
+        io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getBiDirectionalFruitTypeOrderRequestMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -264,6 +356,8 @@ public final class FoodStorageServiceGrpc {
 
   private static final int METHODID_FRUIT_STORAGE = 0;
   private static final int METHODID_STREAM_FOOD_EMPTY_SPACE_UPDATE_REQUEST = 1;
+  private static final int METHODID_STREAM_CLIENT_FRUIT_TYPE_ORDER_REQUEST = 2;
+  private static final int METHODID_BI_DIRECTIONAL_FRUIT_TYPE_ORDER_REQUEST = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -300,6 +394,12 @@ public final class FoodStorageServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_STREAM_CLIENT_FRUIT_TYPE_ORDER_REQUEST:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.streamClientFruitTypeOrderRequest(
+              (io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse>) responseObserver);
+        case METHODID_BI_DIRECTIONAL_FRUIT_TYPE_ORDER_REQUEST:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.biDirectionalFruitTypeOrderRequest(
+              (io.grpc.stub.StreamObserver<org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -322,6 +422,20 @@ public final class FoodStorageServiceGrpc {
               org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateRequest,
               org.example.foodcontainer.foodstorageservice.StreamFoodEmptySpaceUpdateResponse>(
                 service, METHODID_STREAM_FOOD_EMPTY_SPACE_UPDATE_REQUEST)))
+        .addMethod(
+          getStreamClientFruitTypeOrderRequestMethod(),
+          io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+            new MethodHandlers<
+              org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest,
+              org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse>(
+                service, METHODID_STREAM_CLIENT_FRUIT_TYPE_ORDER_REQUEST)))
+        .addMethod(
+          getBiDirectionalFruitTypeOrderRequestMethod(),
+          io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+            new MethodHandlers<
+              org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderRequest,
+              org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse>(
+                service, METHODID_BI_DIRECTIONAL_FRUIT_TYPE_ORDER_REQUEST)))
         .build();
   }
 
@@ -372,6 +486,8 @@ public final class FoodStorageServiceGrpc {
               .setSchemaDescriptor(new FoodStorageServiceFileDescriptorSupplier())
               .addMethod(getFruitStorageMethod())
               .addMethod(getStreamFoodEmptySpaceUpdateRequestMethod())
+              .addMethod(getStreamClientFruitTypeOrderRequestMethod())
+              .addMethod(getBiDirectionalFruitTypeOrderRequestMethod())
               .build();
         }
       }

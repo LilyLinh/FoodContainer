@@ -4,19 +4,19 @@
 package org.example.foodcontainer.foodstorageservice;
 
 /**
- * Protobuf type {@code org.sample.FoodContainer.FoodStorageServiceRequest}
+ * Protobuf type {@code org.sample.FoodContainer.StreamClientFruitTypeOrderResponse}
  */
-public  final class FoodStorageServiceRequest extends
+public  final class StreamClientFruitTypeOrderResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:org.sample.FoodContainer.FoodStorageServiceRequest)
-    FoodStorageServiceRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:org.sample.FoodContainer.StreamClientFruitTypeOrderResponse)
+    StreamClientFruitTypeOrderResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use FoodStorageServiceRequest.newBuilder() to construct.
-  private FoodStorageServiceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use StreamClientFruitTypeOrderResponse.newBuilder() to construct.
+  private StreamClientFruitTypeOrderResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private FoodStorageServiceRequest() {
-    fruit_ = "";
+  private StreamClientFruitTypeOrderResponse() {
+    result2_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private FoodStorageServiceRequest(
+  private StreamClientFruitTypeOrderResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            fruit_ = s;
+            result2_ = s;
             break;
           }
           default: {
@@ -70,45 +70,45 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_descriptor;
+    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_fieldAccessorTable
+    return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest.class, org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest.Builder.class);
+            org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.class, org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.Builder.class);
   }
 
-  public static final int FRUIT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fruit_;
+  public static final int RESULT2_FIELD_NUMBER = 1;
+  private volatile java.lang.Object result2_;
   /**
-   * <code>string fruit = 1;</code>
+   * <code>string result2 = 1;</code>
    */
-  public java.lang.String getFruit() {
-    java.lang.Object ref = fruit_;
+  public java.lang.String getResult2() {
+    java.lang.Object ref = result2_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      fruit_ = s;
+      result2_ = s;
       return s;
     }
   }
   /**
-   * <code>string fruit = 1;</code>
+   * <code>string result2 = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getFruitBytes() {
-    java.lang.Object ref = fruit_;
+      getResult2Bytes() {
+    java.lang.Object ref = result2_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      fruit_ = b;
+      result2_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -129,8 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getFruitBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fruit_);
+    if (!getResult2Bytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result2_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getFruitBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fruit_);
+    if (!getResult2Bytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result2_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,14 +154,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest)) {
+    if (!(obj instanceof org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse)) {
       return super.equals(obj);
     }
-    org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest other = (org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest) obj;
+    org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse other = (org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse) obj;
 
     boolean result = true;
-    result = result && getFruit()
-        .equals(other.getFruit());
+    result = result && getResult2()
+        .equals(other.getResult2());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,76 +173,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + FRUIT_FIELD_NUMBER;
-    hash = (53 * hash) + getFruit().hashCode();
+    hash = (37 * hash) + RESULT2_FIELD_NUMBER;
+    hash = (53 * hash) + getResult2().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseFrom(byte[] data)
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseFrom(java.io.InputStream input)
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseDelimitedFrom(java.io.InputStream input)
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseDelimitedFrom(
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parseFrom(
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest prototype) {
+  public static Builder newBuilder(org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,26 +271,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code org.sample.FoodContainer.FoodStorageServiceRequest}
+   * Protobuf type {@code org.sample.FoodContainer.StreamClientFruitTypeOrderResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:org.sample.FoodContainer.FoodStorageServiceRequest)
-      org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:org.sample.FoodContainer.StreamClientFruitTypeOrderResponse)
+      org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_descriptor;
+      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_fieldAccessorTable
+      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest.class, org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest.Builder.class);
+              org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.class, org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.Builder.class);
     }
 
-    // Construct using org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest.newBuilder()
+    // Construct using org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      fruit_ = "";
+      result2_ = "";
 
       return this;
     }
@@ -316,17 +316,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_FoodStorageServiceRequest_descriptor;
+      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceProto.internal_static_org_sample_FoodContainer_StreamClientFruitTypeOrderResponse_descriptor;
     }
 
     @java.lang.Override
-    public org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest getDefaultInstanceForType() {
-      return org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest.getDefaultInstance();
+    public org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse getDefaultInstanceForType() {
+      return org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest build() {
-      org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest result = buildPartial();
+    public org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse build() {
+      org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,9 +334,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest buildPartial() {
-      org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest result = new org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest(this);
-      result.fruit_ = fruit_;
+    public org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse buildPartial() {
+      org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse result = new org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse(this);
+      result.result2_ = result2_;
       onBuilt();
       return result;
     }
@@ -375,18 +375,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest) {
-        return mergeFrom((org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest)other);
+      if (other instanceof org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse) {
+        return mergeFrom((org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest other) {
-      if (other == org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest.getDefaultInstance()) return this;
-      if (!other.getFruit().isEmpty()) {
-        fruit_ = other.fruit_;
+    public Builder mergeFrom(org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse other) {
+      if (other == org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse.getDefaultInstance()) return this;
+      if (!other.getResult2().isEmpty()) {
+        result2_ = other.result2_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -404,11 +404,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest parsedMessage = null;
+      org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest) e.getUnfinishedMessage();
+        parsedMessage = (org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -418,71 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object fruit_ = "";
+    private java.lang.Object result2_ = "";
     /**
-     * <code>string fruit = 1;</code>
+     * <code>string result2 = 1;</code>
      */
-    public java.lang.String getFruit() {
-      java.lang.Object ref = fruit_;
+    public java.lang.String getResult2() {
+      java.lang.Object ref = result2_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        fruit_ = s;
+        result2_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string fruit = 1;</code>
+     * <code>string result2 = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getFruitBytes() {
-      java.lang.Object ref = fruit_;
+        getResult2Bytes() {
+      java.lang.Object ref = result2_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        fruit_ = b;
+        result2_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string fruit = 1;</code>
+     * <code>string result2 = 1;</code>
      */
-    public Builder setFruit(
+    public Builder setResult2(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      fruit_ = value;
+      result2_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string fruit = 1;</code>
+     * <code>string result2 = 1;</code>
      */
-    public Builder clearFruit() {
+    public Builder clearResult2() {
       
-      fruit_ = getDefaultInstance().getFruit();
+      result2_ = getDefaultInstance().getResult2();
       onChanged();
       return this;
     }
     /**
-     * <code>string fruit = 1;</code>
+     * <code>string result2 = 1;</code>
      */
-    public Builder setFruitBytes(
+    public Builder setResult2Bytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      fruit_ = value;
+      result2_ = value;
       onChanged();
       return this;
     }
@@ -499,41 +499,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:org.sample.FoodContainer.FoodStorageServiceRequest)
+    // @@protoc_insertion_point(builder_scope:org.sample.FoodContainer.StreamClientFruitTypeOrderResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:org.sample.FoodContainer.FoodStorageServiceRequest)
-  private static final org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:org.sample.FoodContainer.StreamClientFruitTypeOrderResponse)
+  private static final org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest();
+    DEFAULT_INSTANCE = new org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse();
   }
 
-  public static org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest getDefaultInstance() {
+  public static org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FoodStorageServiceRequest>
-      PARSER = new com.google.protobuf.AbstractParser<FoodStorageServiceRequest>() {
+  private static final com.google.protobuf.Parser<StreamClientFruitTypeOrderResponse>
+      PARSER = new com.google.protobuf.AbstractParser<StreamClientFruitTypeOrderResponse>() {
     @java.lang.Override
-    public FoodStorageServiceRequest parsePartialFrom(
+    public StreamClientFruitTypeOrderResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new FoodStorageServiceRequest(input, extensionRegistry);
+      return new StreamClientFruitTypeOrderResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<FoodStorageServiceRequest> parser() {
+  public static com.google.protobuf.Parser<StreamClientFruitTypeOrderResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<FoodStorageServiceRequest> getParserForType() {
+  public com.google.protobuf.Parser<StreamClientFruitTypeOrderResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest getDefaultInstanceForType() {
+  public org.example.foodcontainer.foodstorageservice.StreamClientFruitTypeOrderResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -16,24 +16,4 @@ public interface FoodStorageServiceRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFruitBytes();
-
-  /**
-   * <code>string fruitCode = 2;</code>
-   */
-  java.lang.String getFruitCode();
-  /**
-   * <code>string fruitCode = 2;</code>
-   */
-  com.google.protobuf.ByteString
-      getFruitCodeBytes();
-
-  /**
-   * <code>string fruitType = 3;</code>
-   */
-  java.lang.String getFruitType();
-  /**
-   * <code>string fruitType = 3;</code>
-   */
-  com.google.protobuf.ByteString
-      getFruitTypeBytes();
 }

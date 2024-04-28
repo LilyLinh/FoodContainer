@@ -1,4 +1,5 @@
 
+import io.grpc.LoadBalancer;
 import org.example.FoodStorageServer;
 import org.example.foodcontainer.foodstorageservice.*;
 import com.ecwid.consul.v1.ConsulClient;
@@ -51,32 +52,21 @@ public class FoodStorageClient {
         System.out.println("Server host: " + serverHost);
         System.out.println("Server port: " + serverPort);
 
-
+        // Create a gRPC channel to connect to the server
         ManagedChannel channel = ManagedChannelBuilder.forAddress(serverHost, serverPort).usePlaintext().build();
 
-        // Create a stub for the gRPC service
+        // Create a foodStorageServiceBlockingStub for the gRPC service (blocking foodStorageServiceBlockingStub í for unary requests
         FoodStorageServiceGrpc.FoodStorageServiceBlockingStub stub = FoodStorageServiceGrpc.newBlockingStub(channel);
 
         // Prepare and send the unary request
-        FoodStorageServiceRequest fruit = FoodStorageServiceRequest.newBuilder().setFruit("Request to add one box of fruit to container").build();
-        FoodStorageServiceResponse response = stub.fruitStorage(fruit);
+        FoodStorageServiceRequest request = FoodStorageServiceRequest.newBuilder().setFruit("Request to add one box of fruit to container").build();
+        FoodStorageServiceResponse response = stub.fruitStorage(request);
 
         // Process the response
         System.out.println("Storage notification: " + response.getResult());
 
-        // Shutdown the channel when done
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("Press 'Q' to quit");
-            String input = scanner.nextLine();
-            if (input.equalsIgnoreCase("Q")) {
-                channel.shutdown();
-                break;
-            }
-        }
-
+        channel.shutdown();
     }
-
 
     public void streamFoodEmptySpaceUpdateRequest() {
         List<HealthService> healthServices = consulClient.getHealthServices(consulServiceName, true, null).getValue();
@@ -104,8 +94,8 @@ public class FoodStorageClient {
         // Create a gRPC channel to connect to the server
         ManagedChannel channel = ManagedChannelBuilder.forAddress(serverHost, serverPort).usePlaintext().build();
 
-        // Create a stub for the gRPC service
-        FoodStorageServiceGrpc.FoodStorageServiceStub stub = FoodStorageServiceGrpc.newStub(channel);
+        // This is for Streaming requests
+        FoodStorageServiceGrpc.FoodStorageServiceStub foodStorageServiceStub = FoodStorageServiceGrpc.newStub(channel);
 
         // Prepare and send the unary request
 
@@ -119,36 +109,60 @@ public class FoodStorageClient {
             public void onError(Throwable t) {
                 System.err.println("Error in server streaming: " + t.getMessage());
             }
-
             @Override
             public void onCompleted() {
                 System.out.println("Server streaming completed");
             }
         };
-        stub.streamFoodEmptySpaceUpdateRequest(StreamFoodEmptySpaceUpdateRequest.newBuilder().
 
-                setSpaceQuery("Server01").
-
+        foodStorageServiceStub.streamFoodEmptySpaceUpdateRequest(StreamFoodEmptySpaceUpdateRequest.newBuilder().
+                setSpaceQuery("One more fruit box").
                 build(), responseObserver);
-
-
-
-        // Shutdown the channel when done
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Press 'Q' to quit");
+            String input = scanner.nextLine();
+            if (input.equalsIgnoreCase("Q")) {
+                try {
+                    channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
+                } catch (InterruptedException e) {
+                    System.err.println("Error while shutting down client: " + e.getMessage());
+                }
+                break;
+            }
+        }
 
     }
-
 
     public static void main(String[] args) {
         String consulHost = "localhost"; // Consul host
         int consulPort = 8500; // Consul port
         String consulServiceName = "Fruit-Storage-service"; // Name of the service registered in Consul
         FoodStorageClient client = new FoodStorageClient(consulHost, consulPort, consulServiceName);
-        //client.fruitStorage();
+        client.fruitStorage();
         client.streamFoodEmptySpaceUpdateRequest();
-
+//        Scanner scanner = new Scanner(System.in);
+//        while (true) {
+//            System.out.println("Press 'Q' to quit");
+//            String input = scanner.nextLine();
+//            if (input.equalsIgnoreCase("Q")) {
+//                client.shutdown();
+//                break;
+//            }
+//        }
+//    }
+//
+//
+//    public void shutdown() {
+//        try {
+//            channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
+//        } catch (InterruptedException e) {
+//            System.err.println("Error while shutting down client: " + e.getMessage());
+//        }
+    }
 
         }
-    }
+
 
 
 

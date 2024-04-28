@@ -14,18 +14,15 @@ service FoodStorageService {
   // Server-side streaming RPC
   rpc streamFoodEmptySpaceUpdateRequest(StreamFoodEmptySpaceUpdateRequest) returns (stream StreamFoodEmptySpaceUpdateResponse);
 
+  rpc streamClientFruitTypeOrderRequest(stream StreamClientFruitTypeOrderRequest) returns ( StreamClientFruitTypeOrderResponse );
 
-}
-message Fruit {
-  string fruitCode = 1;
-  string fruitType = 2;
-  string fruit = 3;
+  rpc biDirectionalFruitTypeOrderRequest(stream StreamClientFruitTypeOrderRequest) returns (stream StreamClientFruitTypeOrderResponse );
+
 }
 
 message FoodStorageServiceRequest {
   string fruit = 1;
-  string fruitCode = 2;
-  string fruitType = 3;
+
 }
 
 message FoodStorageServiceResponse {
@@ -39,5 +36,13 @@ message StreamFoodEmptySpaceUpdateRequest {
 
 message StreamFoodEmptySpaceUpdateResponse {
   string spaceUpdate= 1;
+}
+
+message StreamClientFruitTypeOrderRequest {
+  string fruitType = 1;
+}
+
+message StreamClientFruitTypeOrderResponse {
+  string result2 = 1;
 }
 
