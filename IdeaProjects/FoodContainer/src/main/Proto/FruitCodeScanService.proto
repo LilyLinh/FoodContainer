@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package org.example.FoodContainer;
+option java_multiple_files =  true;
+option java_package = "org.example.foodcontainer.fruitcodescanservice";
+option java_outer_classname = "FruitCodeScanServiceProto";
+
+
+service FruitCodeScanService {
+
+  // Client streaming service rpc
+
+  rpc fruitCodeScanRequest( StreamFruitCodeScanRequest) returns ( FruitCodeScanResponse );
+
+}
+
+message StreamFruitCodeScanRequest {
+  string scanRequest = 1;
+  string scanTime = 2;
+
+}
+
+message FruitCodeScanResponse {
+  string scanResponse = 1;
+}
+
+

@@ -96,7 +96,7 @@ public class FoodStorageClient {
         // This is for Streaming requests
         FoodStorageServiceGrpc.FoodStorageServiceStub foodStorageServiceStub = FoodStorageServiceGrpc.newStub(channel);
 
-        // Prepare and send the unary request
+        // Prepare and send the server streaming request
 
         StreamObserver<StreamFoodEmptySpaceUpdateResponse> responseObserver = new StreamObserver<StreamFoodEmptySpaceUpdateResponse>() {
             @Override
@@ -140,24 +140,6 @@ public class FoodStorageClient {
         FoodStorageClient client = new FoodStorageClient(consulHost, consulPort, consulServiceName);
         client.fruitStorage();
         client.streamFoodEmptySpaceUpdateRequest();
-//        Scanner scanner = new Scanner(System.in);
-//        while (true) {
-//            System.out.println("Press 'Q' to quit");
-//            String input = scanner.nextLine();
-//            if (input.equalsIgnoreCase("Q")) {
-//                client.shutdown();
-//                break;
-//            }
-//        }
-//    }
-//
-//
-//    public void shutdown() {
-//        try {
-//            channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
-//        } catch (InterruptedException e) {
-//            System.err.println("Error while shutting down client: " + e.getMessage());
-//        }
     }
 
 }

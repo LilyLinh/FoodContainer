@@ -1,13 +1,10 @@
 package org.example.SmartBreadOrder;
-import io.grpc.LoadBalancer;
-import org.example.FoodStorageServer;
 import org.example.foodcontainer.breadorderservice.*;
 import com.ecwid.consul.v1.ConsulClient;
 import com.ecwid.consul.v1.health.model.HealthService;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
@@ -18,7 +15,6 @@ public class BreadOrderClient {
     private final ConsulClient consulClient;
     private final String consulServiceName;
     private ManagedChannel channel;
-
 
 
     public BreadOrderClient(String consulHost, int consulPort, String consulServiceName) {
@@ -55,7 +51,7 @@ public class BreadOrderClient {
         // This is for Streaming requests
         BreadOrderServiceGrpc.BreadOrderServiceStub stub = BreadOrderServiceGrpc.newStub(channel);
 
-        // Prepare and send the unary request
+        // Prepare and send the client streaming request
 
         StreamObserver<StreamBreadOrderRequest> requestObserver = stub.breadOrderRequest
                 (new StreamObserver<StreamBreadOrderResponse>() {
@@ -89,11 +85,10 @@ public class BreadOrderClient {
         }
         requestObserver.onCompleted();
     }
-
+    // Define method to shutdown client
         public void shutdown () throws InterruptedException {
             channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
         }
-
 
     public static void main(String[] args) throws InterruptedException {
         String consulHost = "localhost"; // Consul host
@@ -102,10 +97,8 @@ public class BreadOrderClient {
         BreadOrderClient client = new BreadOrderClient(consulHost, consulPort, consulServiceName);
 
          Thread streamThread = new Thread(() -> client.breadOrderRequest());
-        //Thread streamThread = new Thread(client::breadOrderRequest);
+
         streamThread.start();
-//        client.breadOrderRequest();
-        // Wait for user input to stop streaming
         System.out.println("Press 'Q' to stop streaming client information");
         Scanner scanner = new Scanner(System.in);
         while (true) {

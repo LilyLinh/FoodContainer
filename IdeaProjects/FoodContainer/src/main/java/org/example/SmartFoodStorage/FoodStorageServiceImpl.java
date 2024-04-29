@@ -28,10 +28,6 @@ private static final AtomicInteger fruitBoxCount = new AtomicInteger(0);
     }
 
    public void streamFoodEmptySpaceUpdateRequest(StreamFoodEmptySpaceUpdateRequest request, StreamObserver<StreamFoodEmptySpaceUpdateResponse> responseObserver) {
-       // Server grpcServer = ServerBuilder.forPort(8500)
-       //   .addService(new FoodStorageServer.FoodStorageServiceImpl())
-       //  .build();
-
        String spaceQuery = request.getSpaceQuery();
 
        Runnable streamingTask = () -> {
@@ -53,7 +49,6 @@ private static final AtomicInteger fruitBoxCount = new AtomicInteger(0);
 
        Thread streamingThread = new Thread(streamingTask);
        streamingThread.start();
-
 
    }
     }

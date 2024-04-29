@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import org.example.foodcontainer.breadorderservice.*;
-
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
 public class BreadFormController {
@@ -38,11 +38,11 @@ public class BreadFormController {
                     @Override
                     public void onNext(StreamBreadOrderResponse response) {
                         if (!channel.isShutdown()) {
-                        System.out.println("Server rersponse: " + response.getOrderResponse());
+                            System.out.println("Server response: " + response.getOrderResponse());
                         }
 
                         javafx.application.Platform.runLater(() -> {
-                            if (isContainerOpen& !channel.isShutdown()) {
+                            if (isContainerOpen) {
                                 breadOrderTextArea.setText(response.getOrderResponse());
                             } else {
                                 submitButton4.setText("Open");

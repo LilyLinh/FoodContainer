@@ -5,15 +5,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import org.example.foodcontainer.foodstorageservice.*;
 import io.grpc.stub.StreamObserver;
-
 import java.util.concurrent.TimeUnit;
 
 public class SimplerFormController {
-    @FXML
-    public TextField nameTextField;
+
     @FXML
     public TextArea fruitStorageRequestTextArea;
 
@@ -25,27 +22,17 @@ public class SimplerFormController {
     private FoodStorageServiceGrpc.FoodStorageServiceStub stub;
 
 
-//    public void setFoodStorageServer(FoodStorageServer foodStorageServer) {
-//        this.foodStorageServer = foodStorageServer;
-//    }
-
+    // Initialize channel and stub to connect with server
     public void initialize() {
         channel = ManagedChannelBuilder.forAddress("localhost", 50055).usePlaintext().build();
         stub = FoodStorageServiceGrpc.newStub(channel);
-
     }
-    // Constructor to initialize the reference to FoodStorageServer
-    //public SimplerFormController(FoodStorageServer foodStorageServer) {
 
-    //this.foodStorageServer = foodStorageServer;
-    //}
-
+    // Create method with function ActionEvent in JVFX to get data with button
+    // this is unary grpc method
     @FXML
     void submitButtonClickOnAction(ActionEvent event) {
-//        String request = foodStorageServer.fruitStorage(result);
-//        System.out.println(foodStorageServer.fruitStorage(result));
-//        String fruit = nameTextField.getText();
-//        System.out.println("nameTextField: " + fruit);
+
         boolean isContainerOpen = submitButton.isHover();
 
         FoodStorageServiceRequest request = FoodStorageServiceRequest.newBuilder()
@@ -79,7 +66,7 @@ public class SimplerFormController {
             }
         });
     }
-
+    // Get data from streaming server method
     @FXML
     void submitButtonClickOnAction2(ActionEvent event) {
         boolean isContainerOpen = submitButton2.isHover();
@@ -112,7 +99,6 @@ public class SimplerFormController {
             }
         };
 
-
         StreamFoodEmptySpaceUpdateRequest request = StreamFoodEmptySpaceUpdateRequest.newBuilder()
                 .setSpaceQuery("Client: Add fruit box automatically")
                 .build();
@@ -128,28 +114,3 @@ public class SimplerFormController {
     }
 }
 
-
-//    public void shutdownChannel(ActionEvent event) {
-//        if (channel != null && !channel.isShutdown()) {
-//            // Shutdown the gRPC channel
-//            channel.shutdown();
-//            try {
-//                // Wait for the channel to terminate (optional)
-//                channel.awaitTermination(5, TimeUnit.SECONDS);
-//                System.out.println("Channel has been shut down.");
-//            } catch (InterruptedException e) {
-//                System.err.println("Error while shutting down channel: " + e.getMessage());
-//            }
-//        }
-//    }
-
-//    public void shutdown(){
-//
-//        onDestroy();
-//    }
-    // Close channel of gRPC when stopping controller
-//    public void onDestroy() {
-//        if (channel != null && !channel.isShutdown()) {
-//            channel.shutdown();
-//        }
-//    }

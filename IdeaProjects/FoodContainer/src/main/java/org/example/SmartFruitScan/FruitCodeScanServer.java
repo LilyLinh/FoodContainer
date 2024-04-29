@@ -1,12 +1,17 @@
-package org.example;
+package org.example.SmartFruitScan;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import com.ecwid.consul.v1.ConsulClient;
 import com.ecwid.consul.v1.agent.model.NewService;
-import org.example.SmartFoodStorage.FoodStorageServiceImpl;
-import org.example.foodcontainer.foodstorageservice.*;
+import org.example.SmartFruitScan.FruitCodeScanServiceImpl;
+import org.example.foodcontainer.foodstorageservice.FoodStorageServiceRequest;
+import org.example.foodcontainer.foodstorageservice.FoodStorageServiceResponse;
+import org.example.foodcontainer.fruitcodescanservice.*;
+import org.example.foodcontainer.fruitcodescanservice.FruitCodeScanResponse;
+import org.example.foodcontainer.fruitcodescanservice.FruitCodeScanServiceGrpc;
+import org.example.foodcontainer.fruitcodescanservice.StreamFruitCodeScanRequest;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,15 +19,17 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
+public class FruitCodeScanServer extends FruitCodeScanServiceGrpc.FruitCodeScanServiceImplBase {
+    private static final AtomicInteger fruitItemCount = new AtomicInteger(0);
     private Server server;
 
     public void start() throws IOException {
         /* The port on which the server should run */
-        int port = 50055;
+        int port = 50056;
         server = ServerBuilder.forPort(port)
-                .addService(new FoodStorageServiceImpl())
+                .addService(new FruitCodeScanServer())
                 .build()
                 .start();
         System.out.println("Server started, listening on " + port);
@@ -56,7 +63,7 @@ public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageService
 
         // Load Consul configuration from consul.properties file
         Properties props = new Properties();
-        try (FileInputStream fis = new FileInputStream("src/main/resources/consul.properties")) {
+        try (FileInputStream fis = new FileInputStream("src/main/resources/fruitcodescan.properties")) {
             props.load(fis);
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,50 +99,53 @@ public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageService
         // Print registration success message
         System.out.println("Server registered to Consul successfully. Host: " + hostAddress);
     }
-// create unary service
-    //static class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
-    @Override
-    public void fruitStorage(FoodStorageServiceRequest
-                                     request, StreamObserver<FoodStorageServiceResponse> responseObserver) {
 
-   }
-// create server streaming service
-    @Override
-    public void streamFoodEmptySpaceUpdateRequest(StreamFoodEmptySpaceUpdateRequest request, StreamObserver<StreamFoodEmptySpaceUpdateResponse> responseObserver) {
+    // create client stream service
 
-    }
-    @Override
-    public StreamObserver<StreamClientFruitTypeOrderRequest> streamClientFruitTypeOrderRequest(StreamObserver<StreamClientFruitTypeOrderResponse> responseObserver) {
-        return new StreamObserver<StreamClientFruitTypeOrderRequest>() {
-            @Override
-            public void onNext(StreamClientFruitTypeOrderRequest fruitType) {
-                System.out.println("Received client information:");
-                System.out.println("Client Name: " + fruitType.getFruitType());
-            }
+//    @Override
+//    public StreamObserver<StreamFruitCodeScanRequest> fruitCodeScanRequest(StreamObserver<FruitCodeScanResponse> responseObserver) {
+//        return new StreamObserver<StreamFruitCodeScanRequest>() {
+//            @Override
+//            public void onNext(StreamFruitCodeScanRequest scannRequest) {
+//                System.out.println("Received client request:" + scannRequest.getScanRequest());
+//
+//            }
+//
+//            @Override
+//            public void onError(Throwable t) {
+//                System.err.println("Error in client information streaming: " + t.getMessage());
+//            }
+//
+//            @Override
+//            public void onCompleted() {
+//                System.out.println("Client information streaming completed");
+//                FruitCodeScanResponse response = FruitCodeScanResponse.newBuilder()
+//                        .setScanResponse("Client information streaming completed")
+//                        .build();
+//                responseObserver.onNext(response);
+//                responseObserver.onCompleted();
+//            }
+//        };
+//    }
+public void fruitCodeScanRequest(StreamFruitCodeScanRequest request, StreamObserver<FruitCodeScanResponse> responseObserver) {
 
-            @Override
-            public void onError(Throwable t) {
-                System.err.println("Error in client information streaming: " + t.getMessage());
-            }
+   int currentItemCount = fruitItemCount.incrementAndGet();
+    String message = "Received request: " + request.getScanRequest() + ". Added scanned item, the current item amount is " + currentItemCount;
+    System.out.println(message);
 
-            @Override
-            public void onCompleted() {
-                System.out.println("Client information streaming completed");
-                StreamClientFruitTypeOrderResponse response = StreamClientFruitTypeOrderResponse.newBuilder()
-                        .setResult2("Client information streaming completed")
-                        .build();
-                responseObserver.onNext(response);
-                responseObserver.onCompleted();
-            }
-        };
-    }
+    FruitCodeScanResponse response = FruitCodeScanResponse.newBuilder()
+            .setScanResponse(message)
+            .build();
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
+}
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        final FoodStorageServer server = new FoodStorageServer();
+       FruitCodeScanServer server = new FruitCodeScanServer();
         server.start();
         server.blockUntilShutdown();
     }
-    }
+}
 
 
 
