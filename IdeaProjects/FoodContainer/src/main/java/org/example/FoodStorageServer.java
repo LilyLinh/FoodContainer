@@ -17,9 +17,8 @@ import java.util.concurrent.TimeUnit;
 
 public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
     private Server server;
-
+// Initialize port for server to run on
     public void start() throws IOException {
-        /* The port on which the server should run */
         int port = 50055;
         server = ServerBuilder.forPort(port)
                 .addService(new FoodStorageServiceImpl())
@@ -29,7 +28,7 @@ public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageService
 
         // Register server to Consul
         registerToConsul();
-
+        // Add shurdown hook for gracefully shutdown
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             try {
                 server.shutdown().awaitTermination(30, TimeUnit.SECONDS);
@@ -44,7 +43,7 @@ public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageService
             server.shutdown();
         }
     }
-
+    // Ensure main threat block and wait for Grpc server finishes termination before close
     private void blockUntilShutdown() throws InterruptedException {
         if (server != null) {
             server.awaitTermination();
@@ -104,31 +103,31 @@ public class FoodStorageServer extends FoodStorageServiceGrpc.FoodStorageService
     public void streamFoodEmptySpaceUpdateRequest(StreamFoodEmptySpaceUpdateRequest request, StreamObserver<StreamFoodEmptySpaceUpdateResponse> responseObserver) {
 
     }
-    @Override
-    public StreamObserver<StreamClientFruitTypeOrderRequest> streamClientFruitTypeOrderRequest(StreamObserver<StreamClientFruitTypeOrderResponse> responseObserver) {
-        return new StreamObserver<StreamClientFruitTypeOrderRequest>() {
-            @Override
-            public void onNext(StreamClientFruitTypeOrderRequest fruitType) {
-                System.out.println("Received client information:");
-                System.out.println("Client Name: " + fruitType.getFruitType());
-            }
-
-            @Override
-            public void onError(Throwable t) {
-                System.err.println("Error in client information streaming: " + t.getMessage());
-            }
-
-            @Override
-            public void onCompleted() {
-                System.out.println("Client information streaming completed");
-                StreamClientFruitTypeOrderResponse response = StreamClientFruitTypeOrderResponse.newBuilder()
-                        .setResult2("Client information streaming completed")
-                        .build();
-                responseObserver.onNext(response);
-                responseObserver.onCompleted();
-            }
-        };
-    }
+//    @Override
+//    public StreamObserver<StreamClientFruitTypeOrderRequest> streamClientFruitTypeOrderRequest(StreamObserver<StreamClientFruitTypeOrderResponse> responseObserver) {
+//        return new StreamObserver<StreamClientFruitTypeOrderRequest>() {
+//            @Override
+//            public void onNext(StreamClientFruitTypeOrderRequest fruitType) {
+//                System.out.println("Received client information:");
+//                System.out.println("Client Name: " + fruitType.getFruitType());
+//            }
+//
+//            @Override
+//            public void onError(Throwable t) {
+//                System.err.println("Error in client information streaming: " + t.getMessage());
+//            }
+//
+//            @Override
+//            public void onCompleted() {
+//                System.out.println("Client information streaming completed");
+//                StreamClientFruitTypeOrderResponse response = StreamClientFruitTypeOrderResponse.newBuilder()
+//                        .setResult2("Client information streaming completed")
+//                        .build();
+//                responseObserver.onNext(response);
+//                responseObserver.onCompleted();
+//            }
+//        };
+//    }
 
     public static void main(String[] args) throws IOException, InterruptedException {
         final FoodStorageServer server = new FoodStorageServer();

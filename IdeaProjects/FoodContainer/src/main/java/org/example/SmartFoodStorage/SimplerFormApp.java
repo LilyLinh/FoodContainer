@@ -20,7 +20,7 @@ public class SimplerFormApp extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
+    // Start Java FX application
     public static void main(String[] args) {
         launch(args);
     }

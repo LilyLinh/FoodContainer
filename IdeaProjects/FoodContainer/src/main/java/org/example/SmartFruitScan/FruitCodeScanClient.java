@@ -25,7 +25,7 @@ public class FruitCodeScanClient {
         this.consulClient = new ConsulClient(consulHost, consulPort);
         this.consulServiceName = consulServiceName;
     }
-
+// Create Unary method
     public void fruitCodeScanRequest() {
         List<HealthService> healthServices = consulClient.getHealthServices(consulServiceName, true, null).getValue();
         if (healthServices.isEmpty()) {
@@ -55,51 +55,13 @@ public class FruitCodeScanClient {
         // This is for Streaming requests
         FruitCodeScanServiceGrpc.FruitCodeScanServiceBlockingStub stub = FruitCodeScanServiceGrpc.newBlockingStub(channel);
 
-        // Prepare and send the client streaming request
-
-//        StreamObserver<StreamFruitCodeScanRequest> requestObserver = stub.fruitCodeScanRequest
-//                (new StreamObserver<FruitCodeScanResponse>() {
-//                    @Override
-//                    public void onNext(FruitCodeScanResponse response) {
-//                        System.out.println("Server rersponse: " + response.getScanResponse());
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable t) {
-//                        System.err.println("Error in server streaming: " + t.getMessage());
-//                    }
-//
-//                    @Override
-//                    public void onCompleted() {
-//                        System.out.println("Server streaming completed");
-//                    }
-//                });
-//        try {
-//            while (true) {
-//                String scanTime = LocalDateTime.now().toString();
-//                StreamFruitCodeScanRequest scannRequest = StreamFruitCodeScanRequest.newBuilder()
-//                        .setScanRequest("Receive one scan request at " + scanTime)
-//                        .build();
-//                requestObserver.onNext(scannRequest);
-//                Thread.sleep(5000); // Send information every 5 seconds
-//            }
-//        } catch (InterruptedException e) {
-//            Thread.currentThread().interrupt();
-//        }
-//        requestObserver.onCompleted();
-//    }
-//    // Define method to shutdown client
-//    public void shutdown () throws InterruptedException {
-//        channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
-//    }
-
         // Prepare and send the unary request
         StreamFruitCodeScanRequest request = StreamFruitCodeScanRequest.newBuilder().setScanRequest("Request to scan one fruit item").build();
         FruitCodeScanResponse response = stub.fruitCodeScanRequest(request);
 
         // Process the response
         System.out.println("Server notification: " + response.getScanResponse());
-
+        // shutdown channel
         channel.shutdown();
     }
 

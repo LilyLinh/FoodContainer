@@ -8,6 +8,7 @@ import org.example.foodcontainer.breadorderservice.StreamBreadOrderRequest;
 
 
 public class BreadOrderServiceImpl extends BreadOrderServiceGrpc.BreadOrderServiceImplBase {
+    // Create method for Grpc client streaming
     public StreamObserver<StreamBreadOrderRequest> breadOrderRequest
             (StreamObserver<StreamBreadOrderResponse> responseObserver) {
         return new StreamObserver<StreamBreadOrderRequest>() {

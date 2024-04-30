@@ -52,7 +52,6 @@ public class BreadOrderClient {
         BreadOrderServiceGrpc.BreadOrderServiceStub stub = BreadOrderServiceGrpc.newStub(channel);
 
         // Prepare and send the client streaming request
-
         StreamObserver<StreamBreadOrderRequest> requestObserver = stub.breadOrderRequest
                 (new StreamObserver<StreamBreadOrderResponse>() {
                     @Override
@@ -70,7 +69,8 @@ public class BreadOrderClient {
                         System.out.println("Server streaming completed");
                     }
                 });
-        try {
+
+            try {
             while (true) {
                 String orderTime = LocalDateTime.now().toString();
                 StreamBreadOrderRequest breadRequest = StreamBreadOrderRequest.newBuilder()
@@ -96,9 +96,10 @@ public class BreadOrderClient {
         String consulServiceName = "Bread-Order-service"; // Name of the service registered in Consul
         BreadOrderClient client = new BreadOrderClient(consulHost, consulPort, consulServiceName);
 
-         Thread streamThread = new Thread(() -> client.breadOrderRequest());
+         Thread streamThread = new Thread(() -> client.breadOrderRequest());// start stream client method by own thread
 
         streamThread.start();
+        // Action to shutdown stop thread
         System.out.println("Press 'Q' to stop streaming client information");
         Scanner scanner = new Scanner(System.in);
         while (true) {

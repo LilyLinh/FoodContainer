@@ -10,14 +10,13 @@ import io.grpc.stub.StreamObserver;
 import java.util.concurrent.TimeUnit;
 
 public class SimplerFormController {
-
+    // Call JavaFX element
     @FXML
     public TextArea fruitStorageRequestTextArea;
-
-    @FXML
     public Button submitButton;
     public Button submitButton2;
     public Button submitButton3;
+    // Declare channel and stub to use Gprc
     private ManagedChannel channel;
     private FoodStorageServiceGrpc.FoodStorageServiceStub stub;
 
@@ -73,10 +72,9 @@ public class SimplerFormController {
         boolean isContainerOpen2 = submitButton3.isHover();
 
 
-        // Prepare and send the unary request
+        // Prepare and send the request
         StreamObserver<StreamFoodEmptySpaceUpdateResponse> responseObserver = new StreamObserver<StreamFoodEmptySpaceUpdateResponse>() {
-            //            StreamFoodEmptySpaceUpdateResponse response = StreamFoodEmptySpaceUpdateResponse.newBuilder()
-//            {
+
             @Override
             public void onNext(StreamFoodEmptySpaceUpdateResponse response) {
                 if(!channel.isShutdown()){System.out.println("Server message: " + response.getSpaceUpdate());}

@@ -4,11 +4,11 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.BreadFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.FruitCodeScanController">
    <children>
-      <Button fx:id="submitButton4" layoutX="223.0" layoutY="73.0" mnemonicParsing="false" onAction="#submitButtonClickOnAction4" prefHeight="26.0" prefWidth="160.0" text="Show order request" />
-      <TextArea fx:id="breadOrderTextArea" layoutX="20.0" layoutY="163.0" prefHeight="82.0" prefWidth="757.0" />
-      <Button fx:id="submitButton5" layoutX="369.0" layoutY="122.0" mnemonicParsing="false" onAction="#submitButtonClickOnAction4" prefHeight="26.0" prefWidth="60.0" text="Stop" />
+      <Button fx:id="submitButton6" layoutX="20.0" layoutY="70.0" mnemonicParsing="false" onAction="#submitButtonClickOnAction6" prefHeight="26.0" prefWidth="160.0" text="Show order request" />
+      <TextArea fx:id="fruitTextArea" layoutX="20.0" layoutY="163.0" prefHeight="82.0" prefWidth="757.0" />
+
 
 
    </children>

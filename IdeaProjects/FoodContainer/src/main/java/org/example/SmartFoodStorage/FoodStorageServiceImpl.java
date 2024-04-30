@@ -9,8 +9,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class FoodStorageServiceImpl extends FoodStorageServiceGrpc.FoodStorageServiceImplBase {
+    // Initialize variable for request with fruitBoxCount++ update
 private static final AtomicInteger fruitBoxCount = new AtomicInteger(0);
-
+// Create Unary grpc method
     public void fruitStorage(FoodStorageServiceRequest request, StreamObserver<FoodStorageServiceResponse> responseObserver) {
 
         int currentBoxCount = fruitBoxCount.incrementAndGet();
@@ -26,7 +27,7 @@ private static final AtomicInteger fruitBoxCount = new AtomicInteger(0);
         responseObserver.onCompleted();
 
     }
-
+// Create Grpc server streaming method
    public void streamFoodEmptySpaceUpdateRequest(StreamFoodEmptySpaceUpdateRequest request, StreamObserver<StreamFoodEmptySpaceUpdateResponse> responseObserver) {
        String spaceQuery = request.getSpaceQuery();
 
@@ -46,11 +47,11 @@ private static final AtomicInteger fruitBoxCount = new AtomicInteger(0);
                responseObserver.onCompleted();
            }
        };
-
+       // create thread start streaming method
        Thread streamingThread = new Thread(streamingTask);
        streamingThread.start();
 
    }
-    }
+}
 
 

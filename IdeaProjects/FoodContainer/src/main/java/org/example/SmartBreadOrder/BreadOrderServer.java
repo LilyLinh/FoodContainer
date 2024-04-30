@@ -32,16 +32,18 @@ public class BreadOrderServer extends BreadOrderServiceGrpc.BreadOrderServiceImp
         // Register server to Consul
         registerToConsul();
 
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-//            System.err.println("*** shutting down gRPC server since JVM is shutting down");
-//            org.example.FoodStorageServer.this.stop();
-//            System.err.println("*** server shut down");
-            try {
-                server.shutdown().awaitTermination(30, TimeUnit.SECONDS);
-            } catch (InterruptedException e) {
-                e.printStackTrace(System.err);
-            }
-        }));
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            public void run() {
+                System.err.println("*** shutting down gRPC server since JVM is shutting down");
+                BreadOrderServer.this.stop();
+                System.err.println("*** server shut down");
+//                try {
+//                    server.shutdown().awaitTermination(30, TimeUnit.SECONDS);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace(System.err);
+//                }
+            }});
+
     }
 
     private void stop() {
@@ -97,7 +99,7 @@ public class BreadOrderServer extends BreadOrderServiceGrpc.BreadOrderServiceImp
         // Print registration success message
         System.out.println("Server registered to Consul successfully. Host: " + hostAddress);
     }
-
+    // create method for Grpc client streaming
     @Override
     public StreamObserver<StreamBreadOrderRequest> breadOrderRequest
             (StreamObserver<StreamBreadOrderResponse> responseObserver) {
@@ -128,12 +130,10 @@ public class BreadOrderServer extends BreadOrderServiceGrpc.BreadOrderServiceImp
 
     public static void main(String[] args) throws IOException, InterruptedException {
         //final BreadOrderServer server = new BreadOrderServer();
-        BreadOrderServer server = new BreadOrderServer();
+        final BreadOrderServer server = new BreadOrderServer();
         server.start();
         server.blockUntilShutdown();
-
     }
-
     }
 
 

@@ -66,7 +66,7 @@ public class FoodStorageClient {
 
         channel.shutdown();
     }
-
+// create method for Grpc server streaming
     public void streamFoodEmptySpaceUpdateRequest() {
         List<HealthService> healthServices = consulClient.getHealthServices(consulServiceName, true, null).getValue();
         if (healthServices.isEmpty()) {
@@ -97,7 +97,6 @@ public class FoodStorageClient {
         FoodStorageServiceGrpc.FoodStorageServiceStub foodStorageServiceStub = FoodStorageServiceGrpc.newStub(channel);
 
         // Prepare and send the server streaming request
-
         StreamObserver<StreamFoodEmptySpaceUpdateResponse> responseObserver = new StreamObserver<StreamFoodEmptySpaceUpdateResponse>() {
             @Override
             public void onNext(StreamFoodEmptySpaceUpdateResponse response) {
@@ -130,7 +129,6 @@ public class FoodStorageClient {
                 break;
             }
         }
-
     }
 
     public static void main(String[] args) {
