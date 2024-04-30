@@ -12,7 +12,7 @@ import org.example.foodcontainer.fruitcodescanservice.*;
 import org.example.foodcontainer.fruitcodescanservice.FruitCodeScanResponse;
 import org.example.foodcontainer.fruitcodescanservice.FruitCodeScanServiceGrpc;
 import org.example.foodcontainer.fruitcodescanservice.StreamFruitCodeScanRequest;
-
+import java.util.Random;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -104,7 +104,11 @@ public class FruitCodeScanServer extends FruitCodeScanServiceGrpc.FruitCodeScanS
 public void fruitCodeScanRequest(StreamFruitCodeScanRequest request, StreamObserver<FruitCodeScanResponse> responseObserver) {
 
    int currentItemCount = fruitItemCount.incrementAndGet();
-    String message = "Received request: " + request.getScanRequest() + ". Added scanned item, the current item amount is " + currentItemCount;
+    Random random = new Random();
+    int randomNumber = random.nextInt();
+    int randomNumberInRange = random.nextInt(100); // Generates a random number between 0 and 99
+    String message = "Received request: " + request.getScanRequest() + ". Added scanned item" + " .The price of this item is "
+            + randomNumberInRange + " The current item amount is " + currentItemCount;
     System.out.println(message);
 
     FruitCodeScanResponse response = FruitCodeScanResponse.newBuilder()

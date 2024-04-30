@@ -10,6 +10,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 import java.time.LocalDateTime;
+import java.util.Random;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;

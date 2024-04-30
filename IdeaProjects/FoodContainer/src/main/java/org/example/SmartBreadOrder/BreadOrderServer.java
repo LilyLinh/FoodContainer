@@ -15,7 +15,10 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Properties;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
+import java.util.Random;
+
 
 public class BreadOrderServer extends BreadOrderServiceGrpc.BreadOrderServiceImplBase {
     private Server server;
@@ -37,11 +40,7 @@ public class BreadOrderServer extends BreadOrderServiceGrpc.BreadOrderServiceImp
                 System.err.println("*** shutting down gRPC server since JVM is shutting down");
                 BreadOrderServer.this.stop();
                 System.err.println("*** server shut down");
-//                try {
-//                    server.shutdown().awaitTermination(30, TimeUnit.SECONDS);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace(System.err);
-//                }
+
             }});
 
     }
@@ -106,10 +105,10 @@ public class BreadOrderServer extends BreadOrderServiceGrpc.BreadOrderServiceImp
         return new StreamObserver<StreamBreadOrderRequest>() {
             @Override
             public void onNext(StreamBreadOrderRequest breadRequest) {
+
                 System.out.println("Received client request:");
-                System.out.println("Get " + breadRequest.getOrderRequest() + " "
-                        + breadRequest.getOrderTime());
-            }
+                System.out.println("Get "
+                        + breadRequest.getOrderTime());}
 
             @Override
             public void onError(Throwable t) {

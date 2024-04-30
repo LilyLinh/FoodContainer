@@ -7,6 +7,7 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -72,9 +73,12 @@ public class BreadOrderClient {
 
             try {
             while (true) {
+                Random random = new Random();
+                int randomNumber = random.nextInt();
+                int randomNumberInRange = random.nextInt(100);
                 String orderTime = LocalDateTime.now().toString();
                 StreamBreadOrderRequest breadRequest = StreamBreadOrderRequest.newBuilder()
-                        .setOrderRequest("Order one bread box")
+                        .setOrderRequest("Order one bread box.Bread code number:" + randomNumberInRange + " .Pick up time: ")
                         .setOrderTime(orderTime)
                         .build();
                 requestObserver.onNext(breadRequest);
